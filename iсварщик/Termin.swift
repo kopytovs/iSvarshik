@@ -11,7 +11,10 @@ import UIKit
 class Termin: UITableViewController {
     
     @IBOutlet var table: UITableView!
-    let mas = ["alpha", "beta", "gamma", "delta", "blabla"]
+    
+    let mas = ["alpha", "beta", "gamma", "delta", "blabla", "sosiska", "hotdog", "troll", "koshka", "sobaka", "kit", "anakin", "sergey", "olesya", "github", "spetselectrode"]
+    
+    var choose = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,7 @@ class Termin: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -46,7 +50,7 @@ class Termin: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TCell", for: indexPath) as UITableViewCell
         
         cell.textLabel?.text = mas[indexPath.row] as String
 
@@ -55,11 +59,11 @@ class Termin: UITableViewController {
         return cell
     }
  
-    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         
-        print(mas[indexPath.row])
-    }*/
+        choose = indexPath.row
+    }
     
     /*
     // Override to support conditional editing of the table view.

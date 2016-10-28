@@ -12,7 +12,6 @@ import MessageUI
 class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,7 +43,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["kopytov@me.com"])
-            mail.setMessageBody("<p>Здраствуйте, Сергей!</p>", isHTML: true)
+            mail.setMessageBody("<p>Здравствуйте, Сергей!</p>", isHTML: true)
             
             present(mail, animated: true)
         } else {

@@ -20,6 +20,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     @IBOutlet var V: UITextField!
     @IBOutlet weak var P: UITextField!
     @IBOutlet var diam: UITextField!
+    
     @IBOutlet weak var cont: UISegmentedControl!
     //var arr:NSArray = []
     let arr = ["|Пусто|", "05кп", "08", "08кп", "08пс", "08Фкп", "08Ю", "08ЮА", "10", "10кп", "10пс", "10ЮА", "11кп", "11ЮА", "12К", "15", "15К", "15кп", "15пс", "15ЮА", "16К", "18К", "18кп", "18ЮА", "20", "20-ПВ", "20А", "20К", "20кп", "20пс", "20ЮА", "22К", "25", "25пс", "30", "35", "40", "45", "50", "50А", "55", "58", "60", "ОсВ"]
@@ -115,7 +116,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             break
             
         case 1:
-            mark(0.06, Mn1: 0.4,	Cr1: 0.1, Mo1: 0,	Ni1: 0.3, Cu1: 0.3, V1: 0)
+            mark(0.06, Mn1: 0.4,	Cr1: 0.1, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0)
             break
             
         case 2:
@@ -399,6 +400,3 @@ func cekv_gost (_ C: Double, Si: Double, Mn: Double, Cr: Double, Mo: Double, Ni:
     return C+Si/24+Mn/6+Cr/5+Mo/4+Ni/40+Cu/13+V/14+P/2
     
 }
-
-
-

@@ -9,10 +9,11 @@
 import UIKit
 
 class Cell: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Name.text = Termin.mas[Termin.choose]
+        
         // Do any additional setup after loading the view.
     }
 
