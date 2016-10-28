@@ -385,6 +385,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8rK-ub-sae" kind="showDetail" id="Skq-hS-5Nl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -399,6 +402,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1r-G4-I4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2626" y="698"/>
+        </scene>
+        <!--Cell-->
+        <scene sceneID="xOH-e9-ZiH">
+            <objects>
+                <viewController id="8rK-ub-sae" customClass="Cell" customModule="iсварщик" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CC1-tk-cZM"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7x-2z-gdd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WUT-dT-DqT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3t-Sf-ahQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Q8v-cy-BMV"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9f-FQ-RDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3556" y="704"/>
         </scene>
         <!--Информация-->
         <scene sceneID="rUC-1t-z8X">
