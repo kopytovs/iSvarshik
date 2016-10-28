@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9352FB2C1DC2CFF000DC0B60 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */; };
 		939921551DAD3FDF0043B058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921541DAD3FDF0043B058 /* AppDelegate.swift */; };
 		939921571DAD3FDF0043B058 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921561DAD3FDF0043B058 /* FirstViewController.swift */; };
 		939921591DAD3FDF0043B058 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921581DAD3FDF0043B058 /* SecondViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		939921511DAD3FDF0043B058 /* iсварщик.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iсварщик.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		939921541DAD3FDF0043B058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		939921561DAD3FDF0043B058 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				939921541DAD3FDF0043B058 /* AppDelegate.swift */,
 				939921561DAD3FDF0043B058 /* FirstViewController.swift */,
+				9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */,
 				939921581DAD3FDF0043B058 /* SecondViewController.swift */,
 				9399215A1DAD3FDF0043B058 /* Main.storyboard */,
 				9399215D1DAD3FDF0043B058 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			files = (
 				939921591DAD3FDF0043B058 /* SecondViewController.swift in Sources */,
 				939921551DAD3FDF0043B058 /* AppDelegate.swift in Sources */,
+				9352FB2C1DC2CFF000DC0B60 /* ThirdViewController.swift in Sources */,
 				939921571DAD3FDF0043B058 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
