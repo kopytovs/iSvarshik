@@ -10,6 +10,7 @@ import UIKit
 
 class Termin: UITableViewController {
     
+    @IBOutlet var table: UITableView!
     let mas = ["alpha", "beta", "gamma", "delta", "blabla"]
 
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class Termin: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -32,10 +34,10 @@ class Termin: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    /*override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
-    }
+    }*/
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -44,16 +46,21 @@ class Termin: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = mas[indexPath.row]
+        cell.textLabel?.text = mas[indexPath.row] as String
 
         // Configure the cell...
 
         return cell
     }
  
-
+    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        
+        print(mas[indexPath.row])
+    }*/
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

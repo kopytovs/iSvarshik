@@ -369,7 +369,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Avk-E8-vIW" style="IBUITableViewCellStyleDefault" id="l2y-uD-hVd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="Avk-E8-vIW" style="IBUITableViewCellStyleDefault" id="l2y-uD-hVd">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l2y-uD-hVd" id="xv2-az-Lt2">
@@ -392,6 +392,9 @@
                             <outlet property="delegate" destination="wql-RN-ACO" id="i2r-2R-NiF"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="table" destination="3m5-Vc-oyb" id="CNg-aI-2ns"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1r-G4-I4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
