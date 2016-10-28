@@ -27,10 +27,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     @IBOutlet weak var picker: UIPickerView!
     //@IBOutlet var button: UIButton!
     
+    @IBOutlet weak var rasch: UIButton!
+    
     @IBOutlet weak var sekve: UITextView!
     @IBOutlet weak var tempa: UITextView!
     //@IBOutlet var sekve: UITextField!
     //@IBOutlet var tempa: UITextField!
+    @IBOutlet weak var helper: UITextView!
     
     var alpha: Bool = true
     
@@ -45,8 +48,12 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         self.picker.delegate = self
         self.sekve.layer.cornerRadius = self.sekve.frame.size.width / 16
         self.tempa.layer.cornerRadius = self.tempa.frame.size.width / 16
+        self.rasch.layer.cornerRadius = self.rasch.frame.size.width / 16
+        self.helper.layer.cornerRadius = self.helper.frame.size.width / 40
+        self.rasch.clipsToBounds = true
         self.sekve.clipsToBounds = true
         self.tempa.clipsToBounds = true
+        self.helper.clipsToBounds = true
         //arr = ["alpha","beta","delta","gamma","koshka","sobaka"]
     } 
     override func didReceiveMemoryWarning() {

@@ -287,7 +287,9 @@
                         <outlet property="V" destination="S1W-Gl-abd" id="Kj0-d0-1qy"/>
                         <outlet property="cont" destination="qLi-eM-dGP" id="Ny3-5v-7rJ"/>
                         <outlet property="diam" destination="hbI-YF-qsG" id="LNg-Hk-74C"/>
+                        <outlet property="helper" destination="DQq-FW-Ude" id="Nl5-pz-a9q"/>
                         <outlet property="picker" destination="1rF-iF-ph8" id="WNC-b5-XZH"/>
+                        <outlet property="rasch" destination="6n1-Vf-kRx" id="ejZ-4b-Ym4"/>
                         <outlet property="sekve" destination="DEK-ef-yK8" id="V80-Fr-395"/>
                         <outlet property="tempa" destination="RsH-LZ-uL8" id="AMe-DS-1uX"/>
                     </connections>
