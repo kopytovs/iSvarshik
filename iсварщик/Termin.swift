@@ -66,12 +66,16 @@ class Termin: UITableViewController {
     }
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+
         
-        let vc = segue.destination as? Cell
+            var path = table.indexPathForSelectedRow
+            
+            let detailViewController = segue.destination as! Cell
         
-            vc?.name = self.mas[self.choose]
+            detailViewController.page = (path?.row)!
+        
+            detailViewController.name = mas
+        
         }
     
     /*

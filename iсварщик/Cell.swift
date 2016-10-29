@@ -10,21 +10,27 @@ import UIKit
 
 class Cell: UIViewController {
     
-    var name:String?
+    var page:Int = -1
+    
+    var name = [""]
     
     @IBOutlet weak var text1: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Name.text = Termin.mas[Termin.choose]
-        //text1.text = name! as String
+        
+        //text1.text = name[page] as String
         // Do any additional setup after loading the view.
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
