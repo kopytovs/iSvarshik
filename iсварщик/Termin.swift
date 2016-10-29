@@ -59,13 +59,27 @@ class Termin: UITableViewController {
         return cell
     }
  
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         
         choose = indexPath.row
+    }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        var path = table.indexPathForSelectedRow
+        
+        let detailViewController = segue.destination as! Cell
+        
+        detailViewController.page = (path?.row)!
+        
+        detailViewController.name = mas
+        
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         
             var path = table.indexPathForSelectedRow
@@ -76,7 +90,7 @@ class Termin: UITableViewController {
         
             detailViewController.name = mas
         
-        }
+        }*/
     
     /*
     // Override to support conditional editing of the table view.

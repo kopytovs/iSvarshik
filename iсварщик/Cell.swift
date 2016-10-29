@@ -20,7 +20,7 @@ class Cell: UIViewController {
         super.viewDidLoad()
         //Name.text = Termin.mas[Termin.choose]
         
-        //text1.text = name[page] as String
+        text1.text = name[page] as String
         // Do any additional setup after loading the view.
     }
     
