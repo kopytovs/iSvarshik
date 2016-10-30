@@ -12,6 +12,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
     
     @IBOutlet var table: UITableView!
     
+    @IBOutlet weak var SBar: UISearchBar!
+    
     let mas = ["alpha", "beta", "gamma", "delta", "blabla", "sosiska", "hotdog", "troll", "koshka", "sobaka", "kit", "anakin", "sergey", "olesya", "github", "spetselectrode"]
     
     var choose = 0
@@ -19,6 +21,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
     var filtered:[String] = []
     
     var SActive : Bool = false
+    
+    var temp:String = ""
     
     //var searchController: UISearchController!
 
@@ -30,7 +34,15 @@ class Termin: UITableViewController, UISearchBarDelegate{
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(Termin.dismissKeyboard))
+        //view.addGestureRecognizer(tap)
+        
         self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
+        
+        SBar.showsCancelButton = false
+        
+        temp = SBar.text!
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,6 +59,11 @@ class Termin: UITableViewController, UISearchBarDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     // MARK: - Table view data source
@@ -134,18 +151,24 @@ class Termin: UITableViewController, UISearchBarDelegate{
     }*/
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
         SActive = true;
     }
     
-    /*func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        SActive = false;
-    }*/
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         SActive = false;
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = temp
+        searchBar.showsCancelButton = false
+        view.endEditing(true)
+        SActive = false;
+        tableView.reloadData()
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
         SActive = false;
     }
     

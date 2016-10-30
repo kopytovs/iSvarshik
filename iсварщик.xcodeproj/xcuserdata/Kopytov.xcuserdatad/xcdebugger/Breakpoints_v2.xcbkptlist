@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/Termin.swift"
-            timestampString = "499486791.562324"
+            timestampString = "499520489.520337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/Termin.swift"
-            timestampString = "499489261.450462"
+            timestampString = "499520489.520337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "Termin"
             landmarkType = "3">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/Termin.swift"
-            timestampString = "499488555.834225"
+            timestampString = "499520489.520337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/Termin.swift"
-            timestampString = "499488555.834225"
+            timestampString = "499520489.520337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "Termin"
             landmarkType = "3">
          </BreakpointContent>
