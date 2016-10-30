@@ -137,9 +137,9 @@ class Termin: UITableViewController, UISearchBarDelegate{
         SActive = true;
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    /*func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         SActive = false;
-    }
+    }*/
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         SActive = false;
@@ -158,7 +158,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
             return range != nil
         })
         
-        if(filtered.count == 0){
+        if(filtered.count == 0 && searchText.isEmpty){
             SActive = false;
         } else {
             SActive = true;
