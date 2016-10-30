@@ -8,13 +8,19 @@
 
 import UIKit
 
-class Termin: UITableViewController {
+class Termin: UITableViewController, UISearchBarDelegate{
     
     @IBOutlet var table: UITableView!
     
     let mas = ["alpha", "beta", "gamma", "delta", "blabla", "sosiska", "hotdog", "troll", "koshka", "sobaka", "kit", "anakin", "sergey", "olesya", "github", "spetselectrode"]
     
     var choose = 0
+    
+    var filtered:[String] = []
+    
+    var SActive : Bool = false
+    
+    //var searchController: UISearchController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +32,16 @@ class Termin: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
-        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //self.searchController.searchResultsUpdater = self
+        
+        //SearchB = searchController.searchBar
+        
+        //searchController = UISearchController(searchResultsController: nil)
+        
+       // tableView.tableHeaderView = searchController.searchBar
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,14 +58,29 @@ class Termin: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return mas.count
+        if SActive {
+            
+            return filtered.count
+            
+        } else{
+            
+            return mas.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TCell", for: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = mas[indexPath.row] as String
+        if SActive {
+            
+            cell.textLabel?.text = filtered[indexPath.row] as String
+            
+        } else{
+            
+            cell.textLabel?.text = mas[indexPath.row] as String
+            
+        }
 
         // Configure the cell...
 
@@ -69,15 +97,75 @@ class Termin: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        var path = table.indexPathForSelectedRow
+        if segue.identifier == "showDetail"{
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! Cell
+                destinationController.name = (SActive) ? filtered : mas
+                //destinationController.name = mas
+                destinationController.page = (indexPath.row)
+            }
+            
+        }
+        
+        /*var path = table.indexPathForSelectedRow
         
         let detailViewController = segue.destination as! Cell
         
         detailViewController.page = (path?.row)!
         
-        detailViewController.name = mas
+        detailViewController.name = mas*/
         
     }
+    
+    
+    /*func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(searchText: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    func filterContent (searchText : String){
+        filtered = mas.filter({ (les : String) -> Bool in
+            let nameMatch = les.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+            return nameMatch != nil
+        })
+    }*/
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        SActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        SActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        SActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        SActive = false;
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filtered = mas.filter({ (text) -> Bool in
+            let tmp: String = text as String
+            let range = tmp.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+            //let range = tmp.rangeO(searchText, options: String.CompareOptions.CaseInsensitive)
+            return range != nil
+        })
+        
+        if(filtered.count == 0){
+            SActive = false;
+        } else {
+            SActive = true;
+        }
+        self.tableView.reloadData()
+    }
+
     
     /*func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
