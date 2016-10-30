@@ -97,14 +97,14 @@ class Termin: UITableViewController, UISearchBarDelegate{
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "showDetail"{
+        //if segue.identifier == "showDetail"{
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! Cell
                 destinationController.name = (SActive) ? filtered : mas
                 //destinationController.name = mas
                 destinationController.page = (indexPath.row)
-            }
+            //}
             
         }
         
