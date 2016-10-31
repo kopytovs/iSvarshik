@@ -424,17 +424,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-WT-sUO">
-                                <rect key="frame" x="107" y="284" width="160" height="98"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-WT-sUO">
+                                <rect key="frame" x="0.0" y="72" width="375" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="18g-9e-107">
+                                <rect key="frame" x="28" y="168" width="319" height="330"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="explain" destination="18g-9e-107" id="kEf-A2-aYw"/>
                         <outlet property="text1" destination="bn2-WT-sUO" id="dcA-2a-adt"/>
                     </connections>
                 </viewController>
@@ -454,70 +463,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by ©Kopytov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kz-Cs-AtK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by ©Kopytov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kz-Cs-AtK">
                                 <rect key="frame" x="137" y="569" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Написать мне" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZw-bR-2yg">
-                                <rect key="frame" x="131" y="298" width="113" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Написать нам" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZw-bR-2yg">
+                                <rect key="frame" x="131" y="312" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Позвонить мне" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2T-Yi-ae1">
-                                <rect key="frame" x="126" y="155" width="122" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Позвонить нам" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2T-Yi-ae1">
+                                <rect key="frame" x="126" y="95" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVf-7h-Nm3">
-                                <rect key="frame" x="84" y="336" width="207" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="kopytov@me.com">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="send:" destination="oV4-0Q-sqT" eventType="touchUpInside" id="fSh-5y-q9O"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-K5-TJd">
-                                <rect key="frame" x="62" y="195" width="250" height="59"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="8(999)027-72-33">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4J-K5-TJd">
+                                <rect key="frame" x="153" y="143" width="68" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Call">
                                     <color key="titleColor" red="0.038983900099992752" green="0.93630439043045044" blue="0.53493881225585938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="Call:" destination="oV4-0Q-sqT" eventType="touchUpInside" id="ilR-74-lYr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVf-7h-Nm3">
+                                <rect key="frame" x="151" y="362" width="72" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Mail">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="send:" destination="oV4-0Q-sqT" eventType="touchUpInside" id="fSh-5y-q9O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BZw-bR-2yg" firstAttribute="top" secondItem="X4J-K5-TJd" secondAttribute="bottom" constant="44" id="10l-cL-qWX"/>
-                            <constraint firstItem="lVf-7h-Nm3" firstAttribute="leading" secondItem="TYe-LO-7Th" secondAttribute="leadingMargin" constant="68" id="Dxb-wC-OiA"/>
-                            <constraint firstItem="BZw-bR-2yg" firstAttribute="leading" secondItem="TYe-LO-7Th" secondAttribute="leadingMargin" constant="115" id="E5n-cC-TOV"/>
-                            <constraint firstItem="iwd-TI-au9" firstAttribute="top" secondItem="8kz-Cs-AtK" secondAttribute="bottom" constant="28" id="FBb-Z6-am4"/>
-                            <constraint firstItem="n2T-Yi-ae1" firstAttribute="leading" secondItem="TYe-LO-7Th" secondAttribute="leadingMargin" constant="110" id="HFU-60-9p1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BZw-bR-2yg" secondAttribute="trailing" constant="115" id="L67-4Y-Yxc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lVf-7h-Nm3" secondAttribute="trailing" constant="68" id="M0P-oY-p6A"/>
-                            <constraint firstItem="X4J-K5-TJd" firstAttribute="top" secondItem="n2T-Yi-ae1" secondAttribute="bottom" constant="19" id="Nuy-1y-MSf"/>
-                            <constraint firstItem="8kz-Cs-AtK" firstAttribute="leading" secondItem="TYe-LO-7Th" secondAttribute="leadingMargin" constant="121" id="R8D-Xv-CY2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="X4J-K5-TJd" secondAttribute="trailing" constant="47" id="TEl-Mn-zn0"/>
-                            <constraint firstItem="8kz-Cs-AtK" firstAttribute="top" secondItem="lVf-7h-Nm3" secondAttribute="bottom" constant="189" id="dt3-Y2-SZK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8kz-Cs-AtK" secondAttribute="trailing" constant="122" id="g9e-jV-DgE"/>
-                            <constraint firstItem="lVf-7h-Nm3" firstAttribute="top" secondItem="BZw-bR-2yg" secondAttribute="bottom" constant="17" id="jLP-A7-kwu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="n2T-Yi-ae1" secondAttribute="trailing" constant="111" id="mha-Ff-1Fk"/>
-                            <constraint firstItem="n2T-Yi-ae1" firstAttribute="top" secondItem="upy-Jq-cqy" secondAttribute="bottom" constant="135" id="xSO-eI-DSN"/>
-                            <constraint firstItem="X4J-K5-TJd" firstAttribute="leading" secondItem="TYe-LO-7Th" secondAttribute="leadingMargin" constant="46" id="zDP-RJ-BSM"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Информация" image="Third" id="AEx-LA-l3U"/>
+                    <connections>
+                        <outlet property="callB" destination="X4J-K5-TJd" id="QCJ-Gs-d1A"/>
+                        <outlet property="mailB" destination="lVf-7h-Nm3" id="8gX-yC-8B9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9k-oh-tXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="152"/>
+            <point key="canvasLocation" x="1245.5999999999999" y="151.57421289355324"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -565,6 +563,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Call" width="100" height="100"/>
+        <image name="Mail" width="100" height="100"/>
         <image name="Third" width="32" height="32"/>
         <image name="one" width="32" height="32"/>
         <image name="two" width="32" height="32"/>

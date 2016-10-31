@@ -14,7 +14,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
     
     @IBOutlet weak var SBar: UISearchBar!
     
-    let mas = ["alpha", "beta", "gamma", "delta", "blabla", "sosiska", "hotdog", "troll", "koshka", "sobaka", "kit", "anakin", "sergey", "olesya", "github", "spetselectrode"]
+    let mas = ["Агрегат сварочный", "Балластный реостат", "Валик", "Глубина проплавления", "Дефекты", "Дуга косвенного действия", "Заготовка", "Заземление", "Зона оплавления", "Зона соединения", "Маска", "Правка", "Проволока порошковая", "Проволока самозащитная", "Проволока сварочная", "Проволока электродная", "Сварка", "Сварка аргонодуговая", "Сварка блоками", "Сварка взрывом", "Сварка в углекислом газе", "Сварка газовая", "Спецодежда сварщика", "Шов многослойный", "Шов монтажный", "Электрод плавящийся с обмазкой"]
     
     var choose = 0
     
@@ -43,6 +43,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
         SBar.showsCancelButton = false
         
         temp = SBar.text!
+        
+        print (mas.count)
         
         tableView.delegate = self
         tableView.dataSource = self

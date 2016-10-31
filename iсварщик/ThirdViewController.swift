@@ -11,6 +11,8 @@ import MessageUI
 
 class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet weak var callB: UIButton!
+    @IBOutlet weak var mailB: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func Call(_ sender: Any) {
+        callB.isHighlighted = true
         if let url = URL(string: "tel://89990277233") {
             if #available(iOS 10, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: {(success) in print(success)
@@ -32,10 +35,13 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
                 print(success)
             }
         }
+        callB.isHighlighted = false
     }
     
     @IBAction func send(_ sender: Any) {
+        mailB.isHighlighted = true
         sendEmail()
+        mailB.isHighlighted = false
     }
     
     func sendEmail() {
