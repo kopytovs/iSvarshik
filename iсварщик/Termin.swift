@@ -61,6 +61,12 @@ class Termin: UITableViewController, UISearchBarDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Tapping(_ sender: Any) {
+        
+        self.dismissKeyboard()
+        
+    }
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -89,7 +95,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TCell", for: indexPath) as UITableViewCell
         
-        if SActive {
+        if (SActive && !filtered.isEmpty) {
             
             cell.textLabel?.text = filtered[indexPath.row] as String
             
@@ -118,7 +124,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! Cell
-                destinationController.name = (SActive) ? filtered : mas
+                destinationController.name = ((SActive) && !(filtered.isEmpty)) ? filtered : mas
                 //destinationController.name = mas
                 destinationController.page = (indexPath.row)
             //}
@@ -153,10 +159,12 @@ class Termin: UITableViewController, UISearchBarDelegate{
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
         SActive = true;
+        //tableView.reloadData()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         SActive = false;
+        //tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -169,7 +177,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
-        SActive = false;
+        SActive = true;
+        //tableView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -181,7 +190,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
             return range != nil
         })
         
-        if(filtered.count == 0 && searchText.isEmpty){
+        if(filtered.isEmpty){
             SActive = false;
         } else {
             SActive = true;
