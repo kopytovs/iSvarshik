@@ -109,6 +109,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
 
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         switch row {
         case 0:
@@ -116,7 +117,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             break
             
         case 1:
-            mark(0.06, Mn1: 0.4,	Cr1: 0.1, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0)
+            mark(0.06, Mn1: 0.4, Cr1: 0.1, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0)
             break
             
         case 2:
