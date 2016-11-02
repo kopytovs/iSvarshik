@@ -374,7 +374,6 @@
                             <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             <connections>
                                 <outlet property="delegate" destination="xM5-M5-ii3" id="6Ka-Hy-HNG"/>
-                                <outletCollection property="gestureRecognizers" destination="Btr-hC-arG" appends="YES" id="kaI-t1-1Tq"/>
                             </connections>
                         </searchBar>
                         <prototypes>
@@ -411,11 +410,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFv-sS-KGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Btr-hC-arG">
-                    <connections>
-                        <action selector="Tapping:" destination="xM5-M5-ii3" id="MXg-tU-SBw"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2545" y="778"/>
         </scene>

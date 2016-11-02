@@ -44,7 +44,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
         
         temp = SBar.text!
         
-        print (mas.count)
+        //print (mas.count)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -63,11 +63,11 @@ class Termin: UITableViewController, UISearchBarDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func Tapping(_ sender: Any) {
+    /*@IBAction func Tapping(_ sender: Any) {
         
         self.dismissKeyboard()
         
-    }
+    }*/
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -97,7 +97,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TCell", for: indexPath) as UITableViewCell
         
-        if (SActive && !filtered.isEmpty) {
+        /*if (SActive && !filtered.isEmpty) {
             
             cell.textLabel?.text = filtered[indexPath.row] as String
             
@@ -105,8 +105,12 @@ class Termin: UITableViewController, UISearchBarDelegate{
             
             cell.textLabel?.text = mas[indexPath.row] as String
             
-        }
+        }*/
 
+        cell.textLabel?.text = (SActive && !filtered.isEmpty) ? filtered[indexPath.row] as String : mas[indexPath.row] as String
+        
+        //cell.textLabel?.text = (SActive && !(SBar.text?.isEmpty)!) ? filtered[indexPath.row] as String : mas[indexPath.row] as String
+        
         // Configure the cell...
 
         return cell
