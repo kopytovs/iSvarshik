@@ -36,6 +36,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     //@IBOutlet var tempa: UITextField!
     @IBOutlet weak var helper: UITextView!
     
+    @IBOutlet weak var SiL: UILabel!
+    @IBOutlet weak var PL: UILabel!
     var alpha: Bool = true
     
     override func viewDidLoad() {
@@ -43,6 +45,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         // Do any additional setup after loading the view, typically from a nib.
         P.isHidden = true
         Si.isHidden = true
+        PL.isHidden = true
+        SiL.isHidden = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         self.picker.dataSource = self
@@ -310,6 +314,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             alpha = true
             P.isHidden = true
             Si.isHidden = true
+            PL.isHidden = true
+            SiL.isHidden = true
             break
         
             
@@ -318,6 +324,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             alpha = false
             P.isHidden = false
             Si.isHidden = false
+            PL.isHidden = false
+            SiL.isHidden = false
             break
             
         default:

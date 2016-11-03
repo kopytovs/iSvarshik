@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,21 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86z-Xh-nIf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86z-Xh-nIf">
                                 <rect key="frame" x="0.0" y="137" width="375" height="530"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Image"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Добро пожаловать!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oki-4r-b4Q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oki-4r-b4Q">
                                 <rect key="frame" x="32" y="28" width="311" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="NXj-yN-XKb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="28"/>
                                 <color key="textColor" red="0.90767383575439453" green="0.37020432949066162" blue="0.047724999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Oki-4r-b4Q" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="Gnu-6n-Ve3"/>
+                            <constraint firstItem="86z-Xh-nIf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HJG-3t-Dzc"/>
+                            <constraint firstItem="86z-Xh-nIf" firstAttribute="top" secondItem="Oki-4r-b4Q" secondAttribute="bottom" constant="22" id="Pjv-HO-dAf"/>
+                            <constraint firstItem="Oki-4r-b4Q" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="16" id="ZbC-Ed-RXM"/>
+                            <constraint firstItem="Oki-4r-b4Q" firstAttribute="centerX" secondItem="86z-Xh-nIf" secondAttribute="centerX" id="h4A-Oa-Fya"/>
+                            <constraint firstItem="86z-Xh-nIf" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="rxX-2k-ssW"/>
+                            <constraint firstAttribute="trailing" secondItem="86z-Xh-nIf" secondAttribute="trailing" id="vM4-Yx-fX7"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Oki-4r-b4Q"/>
