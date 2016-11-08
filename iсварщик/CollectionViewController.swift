@@ -80,6 +80,8 @@ class CollectionViewController: UICollectionViewController {
         
         cell.VideoL.allowsInlineMediaPlayback = true
         
+        cell.VideoL.scrollView.isScrollEnabled = false
+        
         cell.VideoL.loadHTMLString("<iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
     
         return cell
