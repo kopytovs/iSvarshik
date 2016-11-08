@@ -443,21 +443,15 @@
                                     <segue destination="xM5-M5-ii3" kind="show" id="vlD-uJ-dgq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-23-aWi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-23-aWi">
                                 <rect key="frame" x="50" y="298" width="220" height="120"/>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Видеоуроки"/>
+                                <connections>
+                                    <segue destination="mnH-1e-O1J" kind="show" id="pVl-5t-bpS"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-lc-HXh">
-                                <rect key="frame" x="107" y="397" width="106" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="oia-wR-PYB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ООО &quot;Спецэлектрод-сервис&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYK-od-XsV">
                                 <rect key="frame" x="13" y="442" width="295" height="30"/>
                                 <constraints>
@@ -471,23 +465,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fqv-QK-Way" firstAttribute="leading" secondItem="TqT-23-aWi" secondAttribute="leading" id="0Ks-lz-gU7"/>
-                            <constraint firstItem="XYK-od-XsV" firstAttribute="top" secondItem="K7o-lc-HXh" secondAttribute="bottom" constant="24" id="6vq-qW-4bf"/>
                             <constraint firstItem="XYK-od-XsV" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="8QC-De-c1X"/>
-                            <constraint firstItem="TqT-23-aWi" firstAttribute="centerX" secondItem="K7o-lc-HXh" secondAttribute="centerX" id="G8Z-fb-9u5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XYK-od-XsV" secondAttribute="trailing" constant="-4" id="I2K-dD-i1j"/>
-                            <constraint firstItem="K7o-lc-HXh" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="91" id="LFe-Nn-ufg"/>
                             <constraint firstItem="TqT-23-aWi" firstAttribute="width" secondItem="Fqv-QK-Way" secondAttribute="width" id="N2z-p1-Gkv"/>
                             <constraint firstItem="Fqv-QK-Way" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="60" id="O7M-7a-ene"/>
                             <constraint firstItem="TqT-23-aWi" firstAttribute="top" secondItem="Fqv-QK-Way" secondAttribute="bottom" constant="54" id="Onm-OR-cFc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K7o-lc-HXh" secondAttribute="trailing" constant="91" id="Q65-0i-jKZ"/>
                             <constraint firstItem="XYK-od-XsV" firstAttribute="top" secondItem="TqT-23-aWi" secondAttribute="bottom" constant="24" id="TUn-NG-d5l"/>
-                            <constraint firstItem="K7o-lc-HXh" firstAttribute="centerX" secondItem="XYK-od-XsV" secondAttribute="centerX" id="TnM-ym-Kd8"/>
-                            <constraint firstItem="K7o-lc-HXh" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Vqj-BD-iw4"/>
-                            <constraint firstItem="TqT-23-aWi" firstAttribute="bottom" secondItem="K7o-lc-HXh" secondAttribute="bottom" id="ZCU-jC-367"/>
                             <constraint firstItem="XYK-od-XsV" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="378" id="a9c-Yu-59n"/>
                             <constraint firstItem="TqT-23-aWi" firstAttribute="height" secondItem="Fqv-QK-Way" secondAttribute="height" id="c22-ts-Yfp"/>
-                            <constraint firstItem="K7o-lc-HXh" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="333" id="clb-AK-Laa"/>
-                            <constraint firstItem="K7o-lc-HXh" firstAttribute="top" secondItem="TqT-23-aWi" secondAttribute="bottom" constant="-21" id="eMD-fm-w3S"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="XYK-od-XsV" secondAttribute="bottom" constant="47" id="gDe-WE-FFg"/>
                             <constraint firstItem="Fqv-QK-Way" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="j84-mT-8xE"/>
                             <constraint firstItem="Fqv-QK-Way" firstAttribute="trailing" secondItem="TqT-23-aWi" secondAttribute="trailing" id="jyr-DS-0bE"/>
@@ -505,6 +490,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1655.625" y="921.12676056338034"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="MIH-Hh-Xjs">
+            <objects>
+                <collectionViewController id="mnH-1e-O1J" customClass="CollectionViewController" customModule="iсварщик" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="YSF-80-Ea3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nkr-TQ-kEN">
+                            <size key="itemSize" width="320" height="175"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifier" id="Oon-Qd-74B" customClass="CollectionViewCell" customModule="iсварщик" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-y9-Y14">
+                                            <rect key="frame" x="40" y="146" width="240" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-iR-Npj">
+                                            <rect key="frame" x="8" y="8" width="304" height="136"/>
+                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </webView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hBf-y9-Y14" firstAttribute="bottom" secondItem="Oon-Qd-74B" secondAttribute="bottomMargin" id="C3I-h2-iff"/>
+                                    <constraint firstItem="ASd-iR-Npj" firstAttribute="trailing" secondItem="hBf-y9-Y14" secondAttribute="trailing" constant="32" id="CDl-Fd-YP9"/>
+                                    <constraint firstItem="ASd-iR-Npj" firstAttribute="top" secondItem="Oon-Qd-74B" secondAttribute="topMargin" id="Hkk-5U-gZM"/>
+                                    <constraint firstItem="ASd-iR-Npj" firstAttribute="centerX" secondItem="Oon-Qd-74B" secondAttribute="centerX" id="OgK-76-32x"/>
+                                    <constraint firstItem="hBf-y9-Y14" firstAttribute="top" secondItem="ASd-iR-Npj" secondAttribute="bottom" constant="2" id="cht-cv-pRK"/>
+                                    <constraint firstItem="ASd-iR-Npj" firstAttribute="leading" secondItem="hBf-y9-Y14" secondAttribute="leading" constant="-32" id="eo8-tk-5Os"/>
+                                    <constraint firstItem="ASd-iR-Npj" firstAttribute="leading" secondItem="Oon-Qd-74B" secondAttribute="leadingMargin" id="ihB-Wj-wLH"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="NameOfTheVideo" destination="hBf-y9-Y14" id="gK2-Ra-v5U"/>
+                                    <outlet property="VideoL" destination="ASd-iR-Npj" id="8zA-9R-rmV"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="mnH-1e-O1J" id="gj1-Qd-Ixh"/>
+                            <outlet property="delegate" destination="mnH-1e-O1J" id="1rl-uP-TLA"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8KP-qb-yg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2782.5" y="1294.0140845070423"/>
         </scene>
         <!--Термины-->
         <scene sceneID="2N1-nY-Ufe">
@@ -558,7 +603,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFv-sS-KGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="778"/>
+            <point key="canvasLocation" x="2777" y="482"/>
         </scene>
         <!--Cell-->
         <scene sceneID="Es7-yH-pn4">
@@ -619,7 +664,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5Z-0N-qhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3420" y="786.97183098591552"/>
+            <point key="canvasLocation" x="3653" y="491"/>
         </scene>
         <!--Информация-->
         <scene sceneID="rUC-1t-z8X">
