@@ -12,8 +12,8 @@ private let reuseIdentifier = "CellIdentifier"
 
 class CollectionViewController: UICollectionViewController {
     
-    var names = [String]()
-    var videos = [String]()
+    var names = ["Сварка нержавеющих сталей", "Сварка высокоуглеродистых сталей", "Сварка чугуна", "Сварка алюминия", "Ремонт и наплавка изношенных поверхностей. Защита от износа", "Наплавка против абразивного износа", "Техника безопастности при сварке", "Сварочные деформации", "Наплавка инструментальных"]
+    var videos = ["https://www.youtube.com/embed/2DvrTTEsynU", "https://www.youtube.com/embed/4iphDNrNA9U", "https://www.youtube.com/embed/VDjUXHAjOO8", "https://www.youtube.com/embed/RYUWM5bJAyY", "https://www.youtube.com/embed/LwSSdP0h25E", "https://www.youtube.com/embed/RBS3FkoSrSU", "https://www.youtube.com/embed/A2ChzS_U3uo", "https://www.youtube.com/embed/seX5IZG65HI", "https://www.youtube.com/embed/M98Z-wkkj1o"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +25,6 @@ class CollectionViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
-        for index in 0...7 {
-            names.append("Фильм №\(index+1)")
-        }
-        
-        videos.append("https://www.youtube.com/embed/2DvrTTEsynU")
-        videos.append("https://www.youtube.com/embed/4iphDNrNA9U")
-        videos.append("https://www.youtube.com/embed/VDjUXHAjOO8")
-        videos.append("https://www.youtube.com/embed/RYUWM5bJAyY")
-        videos.append("https://www.youtube.com/embed/LwSSdP0h25E")
-        videos.append("https://www.youtube.com/embed/RBS3FkoSrSU")
-        videos.append("https://www.youtube.com/embed/seX5IZG65HI")
-        videos.append("https://www.youtube.com/embed/M98Z-wkkj1o")
         
     }
 
