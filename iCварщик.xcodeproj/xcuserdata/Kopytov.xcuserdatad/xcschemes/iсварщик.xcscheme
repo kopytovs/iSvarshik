@@ -17,7 +17,7 @@
                BlueprintIdentifier = "939921501DAD3FDF0043B058"
                BuildableName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.app"
                BlueprintName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;"
-               ReferencedContainer = "container:i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
+               ReferencedContainer = "container:iC&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "939921501DAD3FDF0043B058"
             BuildableName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.app"
             BlueprintName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;"
-            ReferencedContainer = "container:i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
+            ReferencedContainer = "container:iC&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "939921501DAD3FDF0043B058"
             BuildableName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.app"
             BlueprintName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;"
-            ReferencedContainer = "container:i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
+            ReferencedContainer = "container:iC&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "939921501DAD3FDF0043B058"
             BuildableName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.app"
             BlueprintName = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;"
-            ReferencedContainer = "container:i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
+            ReferencedContainer = "container:iC&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

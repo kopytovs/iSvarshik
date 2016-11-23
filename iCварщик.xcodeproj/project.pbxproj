@@ -114,12 +114,12 @@
 				TargetAttributes = {
 					939921501DAD3FDF0043B058 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = FVVTZS9Y96;
+						DevelopmentTeam = D6EK8XP63P;
 						LastSwiftMigration = 0800;
 					};
 				};
 			};
-			buildConfigurationList = 9399214C1DAD3FDF0043B058 /* Build configuration list for PBXProject "iсварщик" */;
+			buildConfigurationList = 9399214C1DAD3FDF0043B058 /* Build configuration list for PBXProject "iCварщик" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -283,10 +283,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D6EK8XP63P;
 				INFOPLIST_FILE = "iсварщик/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "KopytovSD.i-------";
+				PRODUCT_BUNDLE_IDENTIFIER = KopytovSD.iSvarshik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -299,10 +300,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D6EK8XP63P;
 				INFOPLIST_FILE = "iсварщик/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "KopytovSD.i-------";
+				PRODUCT_BUNDLE_IDENTIFIER = KopytovSD.iSvarshik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -312,7 +314,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9399214C1DAD3FDF0043B058 /* Build configuration list for PBXProject "iсварщик" */ = {
+		9399214C1DAD3FDF0043B058 /* Build configuration list for PBXProject "iCварщик" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				939921631DAD3FDF0043B058 /* Debug */,

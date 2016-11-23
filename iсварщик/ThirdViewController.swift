@@ -13,6 +13,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBOutlet weak var callB: UIButton!
     @IBOutlet weak var mailB: UIButton!
+    var num = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["kopytov@me.com"])
-            mail.setMessageBody("<p>Здравствуйте, Сергей!</p>", isHTML: true)
+            mail.setMessageBody("<p>Я запускал приложение \(num) раз</p>", isHTML: true)
             
             present(mail, animated: true)
         } else {
