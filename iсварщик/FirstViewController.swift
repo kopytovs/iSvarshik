@@ -71,6 +71,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         self.tempa.clipsToBounds = true
         self.helper.clipsToBounds = true
         
+        //let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
+        //self.view.addGestureRecognizer(longPressRecognizer)
+        //longPressRecognizer.delegate = self
+        
         /*if (UserDefaults.standard.value(forKey: "numberOfEn") != nil){
             numberOfEn = UserDefaults.standard.value(forKey: "numberOfEn") as! Int
         }
@@ -86,6 +90,23 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /*func longPressed(sender: UILongPressGestureRecognizer)
+    {
+        if sender.state == .ended {
+            print("UIGestureRecognizerStateEnded")
+
+            //Do Whatever You want on End of Gesture
+        }
+        else if sender.state == .began {
+            print("UIGestureRecognizerStateBegan.")
+            //Do Whatever You want on Began of Gesture
+        }
+        
+    }*/
+    @IBAction func longTap(_ sender: Any) {
+        self.clearAll()
     }
     
     // returns the number of 'columns' to display.
@@ -205,6 +226,33 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
     }
     
+    func clearAll () {
+        C.text?.removeAll()
+        Si.text?.removeAll()
+        Mn.text?.removeAll()
+        Cr.text?.removeAll()
+        Mo.text?.removeAll()
+        Ni.text?.removeAll()
+        Cu.text?.removeAll()
+        V.text?.removeAll()
+        P.text?.removeAll()
+        diam.text?.removeAll()
+        sekve.text.removeAll()
+        tempa.text.removeAll()
+    }
+    
+    func clearFields () {
+        C.text?.removeAll()
+        Si.text?.removeAll()
+        Mn.text?.removeAll()
+        Cr.text?.removeAll()
+        Mo.text?.removeAll()
+        Ni.text?.removeAll()
+        Cu.text?.removeAll()
+        V.text?.removeAll()
+        P.text?.removeAll()
+    }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         
@@ -215,7 +263,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             if choosen == 0 {
             switch row {
         case 0:
-            mark(0,Mn1: 0,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0)
+            self.clearFields()
+            //mark(0,Mn1: 0,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0)
             break
             
         case 1:
@@ -397,7 +446,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 //doing of 4rd group
                 switch row{
                     
-                case 0: mark2(0,Si1: 0,Mn1: 0,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0,P1: 0)
+                case 0:
+                    self.clearFields()
+                    //mark2(0,Si1: 0,Mn1: 0,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0,P1: 0)
                     
                 case 1: mark2(0.08, Si1: 0.6, Mn1: 1.7, Cr1: 0, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0)
                     
@@ -673,10 +724,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             if fields[0] {
                 
                 if !(P.text?.isEmpty)! || !(Si.text?.isEmpty)! {
-                    P.text?.removeAll()
-                    Si.text?.removeAll()
                     
-                    let alert = UIAlertController(title: "Ошибка", message: "В данной формуле недопустимо применение сторонних хим. элементов!", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Ошибка", message: "В данной формуле недопустимо применение сторонних хим. элементов! Очистить лишние ячейки?", preferredStyle: .alert)
                     
                     let cancel = UIAlertAction(title: "Отменить", style: .default, handler: {(alert) -> Void in
                         
@@ -684,7 +733,12 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     
                     })
                     
-                    let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let ok = UIAlertAction(title: "OK", style: .default, handler: {(action) -> Void in
+                    
+                        self.P.text?.removeAll()
+                        self.Si.text?.removeAll()
+                    
+                    })
                     
                     alert.addAction(cancel)
                     
