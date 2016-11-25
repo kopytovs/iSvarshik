@@ -751,7 +751,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 Cekv = cekv(Double(C.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!)
                 
                 if real {
-                    sekve.text = "\(Cekv)"
+                    sekve.text = "\(Double(Cekv).roundTo(places: 3))"
                 }
                 
                 
@@ -768,7 +768,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                             
                         } else{
                             
-                            tempa.text = "\(Temp)"
+                            tempa.text = "\(Double(Temp).roundTo(places: 3))"
                         }
                         
                     } else{
@@ -805,7 +805,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 
                 Cekv = cekv_gost(Double(C.text!)!, Si: Double(Si.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!, P: Double(P.text!)! )
                 
-                sekve.text = "\(Cekv)"
+                sekve.text = "\(Double(Cekv).roundTo(places: 3))"
                 
                 if fields[2] {
                     
@@ -820,7 +820,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                         
                     } else{
                     
-                        tempa.text = "\(Temp)"
+                        tempa.text = "\(Double(Temp).roundTo(places: 3))"
                         
                     }
                     
@@ -888,4 +888,12 @@ func cekv_gost (_ C: Double, Si: Double, Mn: Double, Cr: Double, Mo: Double, Ni:
     
     return C+Si/24+Mn/6+Cr/5+Mo/4+Ni/40+Cu/13+V/14+P/2
     
+}
+
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 }
