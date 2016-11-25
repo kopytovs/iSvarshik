@@ -11,17 +11,19 @@ import UIKit
 class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet var C: UITextField!
-    @IBOutlet weak var Si: UITextField!
+    @IBOutlet var Si: UITextField!
     @IBOutlet var Mn: UITextField!
     @IBOutlet var Cr: UITextField!
     @IBOutlet var Mo: UITextField!
     @IBOutlet var Ni: UITextField!
     @IBOutlet var Cu: UITextField!
     @IBOutlet var V: UITextField!
-    @IBOutlet weak var P: UITextField!
+    @IBOutlet var P: UITextField!
     @IBOutlet var diam: UITextField!
     
-    var numberOfEn = 0
+    //var numberOfEn = 0
+    
+    var fields = [ false, false, false ]
     
     @IBOutlet weak var cont: UISegmentedControl!
     //var arr1:NSarray = []
@@ -69,15 +71,15 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         self.tempa.clipsToBounds = true
         self.helper.clipsToBounds = true
         
-        if (UserDefaults.standard.value(forKey: "numberOfEn") != nil){
+        /*if (UserDefaults.standard.value(forKey: "numberOfEn") != nil){
             numberOfEn = UserDefaults.standard.value(forKey: "numberOfEn") as! Int
         }
         
         numberOfEn += 1
         
-        UserDefaults.standard.set(numberOfEn, forKey: "numberOfEn")
+        UserDefaults.standard.set(numberOfEn, forKey: "numberOfEn")*/
         
-        print ("итого: \(arr4.count)")
+        //print ("итого: \(arr4.count)")
         
         //arr1 = ["alpha","beta","delta","gamma","koshka","sobaka"]
     } 
@@ -576,8 +578,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     break
 
                 }
-                P.text = nil
-                Si.text = nil
+                //P.text = nil
+                //Si.text = nil
             }
         }
         
@@ -619,56 +621,187 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let destinationController = segue.destination as! ThirdViewController
         
         destinationController.num = numberOfEn
 
 
-    }
+    }*/
     
     
     @IBAction func calc (_ sender : AnyObject){
         
-        if (C.text!.isEmpty) || (Mn.text!.isEmpty) || (Cr.text!.isEmpty) || (Mo.text!.isEmpty) || (Ni.text!.isEmpty) || (Cu.text!.isEmpty) || (V.text!.isEmpty){
+        if !(diam.text?.isEmpty)! {
+            helper.text = "Подсказки:"
+        }
+        
+        if !(C.text?.isEmpty)! && !(Mn.text?.isEmpty)! && !(Cr.text?.isEmpty)! && !(Mo.text?.isEmpty)! && !(Ni.text?.isEmpty)! && !(Cu.text?.isEmpty)! && !(V.text?.isEmpty)! {
             
-            sekve.text = ("Ошибка!")
+            fields[0] = true
             
-            tempa.text = ("Ошибка!")
+        } else{
+            fields[0] = false
+        }
+        
+        if !(C.text?.isEmpty)! && !(Mn.text?.isEmpty)! && !(Cr.text?.isEmpty)! && !(Mo.text?.isEmpty)! && !(Ni.text?.isEmpty)! && !(Cu.text?.isEmpty)! && !(V.text?.isEmpty)! && !(P.text?.isEmpty)! && !(Si.text?.isEmpty)! {
             
-        }  else{
-            var ceshka : Double = 0
-            if (alpha){
+            fields[1] = true
+            
+        } else{
+            
+            fields[1] = false
+            
+        }
+        
+        if (diam.text?.isEmpty)! {
+            
+            fields[2] = false
+            
+        } else{
+            fields[2] = true
+        }
+        
+        var Temp : Double
+        var Cekv : Double
+        
+        var real = true
+        
+        if alpha {
+            
+            if fields[0] {
                 
-            ceshka = cekv(Double(C.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!)
-                
-            } else{
-                
-                if (Si.text!.isEmpty || P.text!.isEmpty){
+                if !(P.text?.isEmpty)! || !(Si.text?.isEmpty)! {
+                    P.text?.removeAll()
+                    Si.text?.removeAll()
                     
-                    sekve.text = ("Ошибка!")
+                    let alert = UIAlertController(title: "Ошибка", message: "В данной формуле недопустимо применение сторонних хим. элементов!", preferredStyle: .alert)
                     
-                    tempa.text = ("Ошибка!")
+                    let cancel = UIAlertAction(title: "Отменить", style: .default, handler: {(alert) -> Void in
+                        
+                        real = false
+                    
+                    })
+                    
+                    let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    
+                    alert.addAction(cancel)
+                    
+                    alert.addAction(ok)
+                    
+                    present(alert, animated: true, completion: nil)
                     
                 }
-                else{
-                    ceshka = cekv_gost(Double(C.text!)!, Si: Double(Si.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!, P: Double(P.text!)!)
+                
+                Cekv = cekv(Double(C.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!)
+                
+                if real {
+                    sekve.text = "\(Cekv)"
                 }
+                
+                
+                if fields[2] {
+                    
+                    Temp = temp(Double(diam.text!)!, cek: Cekv)
+                        
+                    if Temp.isNaN {
+                            
+                            let alert4 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
+                            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert4.addAction(ok)
+                            present(alert4, animated: true, completion: nil)
+                            
+                        } else{
+                            
+                            tempa.text = "\(Temp)"
+                        }
+                        
+                    } else{
+                    
+                        helper.text = "Невозможно расчитать температуру без диаметра!"
+                    
+                    }
+                
+            } else {
+                
+                var mas = [String]()
+                
+                if (C.text?.isEmpty)! {mas.append("C")}
+                if (Mn.text?.isEmpty)! {mas.append("Mn")}
+                if (Cr.text?.isEmpty)! {mas.append("Cr")}
+                if (Mo.text?.isEmpty)! {mas.append("Mo")}
+                if (Ni.text?.isEmpty)! {mas.append("Ni")}
+                if (Cu.text?.isEmpty)! {mas.append("Cu")}
+                if (V.text?.isEmpty)! {mas.append("V")}
+                
+                let alert1 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas)", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                alert1.addAction(ok)
+                
+                present(alert1, animated: true, completion: nil)
+                
             }
-
-            if ( diam.text?.isEmpty)!{
-                tempa.text = ("Ошибка!")
-                sekve.text = String(format: "%f", ceshka)
+            
+        } else{
+            
+            if fields[1] {
+                
+                Cekv = cekv_gost(Double(C.text!)!, Si: Double(Si.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!, P: Double(P.text!)! )
+                
+                sekve.text = "\(Cekv)"
+                
+                if fields[2] {
+                    
+                    Temp = temp(Double(diam.text!)!, cek: Cekv)
+                    
+                    if Temp.isNaN {
+                        
+                        let alert3 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
+                        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert3.addAction(ok)
+                        present(alert3, animated: true, completion: nil)
+                        
+                    } else{
+                    
+                        tempa.text = "\(Temp)"
+                        
+                    }
+                    
+                } else{
+                    
+                    helper.text = "Невозможно расчитать температуру без диаметра!"
+                    
+                }
+                
             } else{
-            let tempeshka = temp (Double(diam.text!)!, cek: ceshka)
-        
-            sekve.text = String(format: "%f", ceshka)
-        
-            tempa.text = String(format: "%f", round(tempeshka))
+                
+                var mas1 = [String]()
+                
+                if (C.text?.isEmpty)! {mas1.append("C")}
+                if (Mn.text?.isEmpty)! {mas1.append("Mn")}
+                if (Cr.text?.isEmpty)! {mas1.append("Cr")}
+                if (Mo.text?.isEmpty)! {mas1.append("Mo")}
+                if (Ni.text?.isEmpty)! {mas1.append("Ni")}
+                if (Cu.text?.isEmpty)! {mas1.append("Cu")}
+                if (V.text?.isEmpty)! {mas1.append("V")}
+                if (Si.text?.isEmpty)! {mas1.append("Si")}
+                if (P.text?.isEmpty)! {mas1.append("P")}
+                
+                let alert2 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas1)", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                alert2.addAction(ok)
+                
+                present(alert2, animated: true, completion: nil)
+                
             }
             
         }
+        
         
         view.endEditing(true)
         

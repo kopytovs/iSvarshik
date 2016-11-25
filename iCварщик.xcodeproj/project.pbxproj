@@ -108,6 +108,7 @@
 		939921491DAD3FDF0043B058 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Sergey Kopytov";
@@ -287,7 +288,7 @@
 				INFOPLIST_FILE = "iсварщик/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KopytovSD.iSvarshik;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.iSvarshik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -304,7 +305,7 @@
 				INFOPLIST_FILE = "iсварщик/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KopytovSD.iSvarshik;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.iSvarshik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;

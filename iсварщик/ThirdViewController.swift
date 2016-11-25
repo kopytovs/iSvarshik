@@ -27,7 +27,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBAction func Call(_ sender: Any) {
         callB.isHighlighted = true
-        if let url = URL(string: "tel://89990277233") {
+        if let url = URL(string: "tel://+78126772014") {
             if #available(iOS 10, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: {(success) in print(success)
                 })
@@ -49,8 +49,8 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["kopytov@me.com"])
-            mail.setMessageBody("<p>Я запускал приложение \(num) раз</p>", isHTML: true)
+            mail.setToRecipients(["info@se123.ru"])
+            mail.setMessageBody("<p>Приветствую, Спецэлектрод-Сервис!</p>", isHTML: true)
             
             present(mail, animated: true)
         } else {
