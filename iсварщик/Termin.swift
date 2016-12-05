@@ -40,6 +40,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
         
         self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
+        
+        
         //let sorted_mas = mas.sorted(by: <)
         
         //print(sorted_mas)
@@ -52,6 +54,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
         
         //self.searchController.searchResultsUpdater = self
         
@@ -112,6 +116,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
         }*/
 
         cell.textLabel?.text = (SActive && !filtered.isEmpty) ? filtered[indexPath.row] as String : mas[indexPath.row] as String
+        
+        cell.textLabel?.textColor = UIColor.white
         
         //cell.textLabel?.text = (SActive && !(SBar.text?.isEmpty)!) ? filtered[indexPath.row] as String : mas[indexPath.row] as String
         
@@ -209,6 +215,8 @@ class Termin: UITableViewController, UISearchBarDelegate{
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.backgroundColor = .clear
         
         cell.alpha = 0
         

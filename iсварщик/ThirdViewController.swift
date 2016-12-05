@@ -13,11 +13,14 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBOutlet weak var callB: UIButton!
     @IBOutlet weak var mailB: UIButton!
+    
     var num = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,6 +29,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func Call(_ sender: Any) {
+        
         callB.isHighlighted = true
         if let url = URL(string: "tel://+78126772014") {
             if #available(iOS 10, *) {
@@ -40,6 +44,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func send(_ sender: Any) {
+        
         mailB.isHighlighted = true
         sendEmail()
         mailB.isHighlighted = false

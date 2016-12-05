@@ -15,6 +15,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
         // Do any additional setup after loading the view, typically from a nib.
         self.Term.layer.cornerRadius = self.Term.frame.size.width / 28
         self.Term.clipsToBounds = true

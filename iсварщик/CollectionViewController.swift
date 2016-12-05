@@ -26,6 +26,8 @@ class CollectionViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view.
         
+        self.collectionView?.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +73,10 @@ class CollectionViewController: UICollectionViewController {
         cell.VideoL.scrollView.isScrollEnabled = false
         
         cell.VideoL.loadHTMLString("<iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        
+        cell.NameOfTheVideo.textColor = UIColor.white
+        
+        cell.backgroundColor = .clear
     
         return cell
     }

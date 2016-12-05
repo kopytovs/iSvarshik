@@ -25,6 +25,8 @@ class Cell: UIViewController {
     
     @IBOutlet weak var explain: UITextView!
     
+    @IBOutlet weak var form: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Name.text = Termin.mas[Termin.choose]
@@ -33,9 +35,19 @@ class Cell: UIViewController {
         
         //print ("блаблабла: \(exp.count)")
         
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr2"))
+        
         text1.text = name as String
         
         explain.text = exp[name]! as String
+        
+        if name == "Погонная энергия El" {
+            form.image = #imageLiteral(resourceName: "pogon")
+        } else if name == "Эффективный КПД процесса нагрева"{
+            form.image = #imageLiteral(resourceName: "kpd")
+        } else {
+            form.image = nil
+        }
         
         //exp = Array(exp1.keys).sorted(<)
         
