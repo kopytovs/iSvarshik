@@ -42,10 +42,16 @@ class Cell: UIViewController {
         explain.text = exp[name]! as String
         
         if name == "Погонная энергия El" {
+            //explain.frame.size.height -= form.frame.height
             form.image = #imageLiteral(resourceName: "pogon")
         } else if name == "Эффективный КПД процесса нагрева"{
-            form.image = #imageLiteral(resourceName: "kpd")
-        } else {
+            //explain.frame.size.height -= form.frame.height
+            form.image = #imageLiteral(resourceName: "otnosh")
+        } else if name == "Плотность эффективной энергии Ql" {
+            //explain.frame.size.height -= form.frame.height
+            form.image = #imageLiteral(resourceName: "plotnost")
+        }   else {
+            //explain.frame.size.height += form.frame.height
             form.image = nil
         }
         
