@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C53a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C60b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,52 +19,35 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86z-Xh-nIf">
-                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
-                                <state key="normal" image="Image"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oki-4r-b4Q">
-                                <rect key="frame" x="32" y="28" width="311" height="87"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="NXj-yN-XKb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="32"/>
-                                <color key="textColor" red="0.90767383575439453" green="0.37020432949066162" blue="0.047724999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgr1" translatesAutoresizingMaskIntoConstraints="NO" id="TZ3-50-hEW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8b2-9x-Ywg">
+                                <rect key="frame" x="35" y="159" width="250" height="250"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Oki-4r-b4Q" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="Gnu-6n-Ve3"/>
-                            <constraint firstItem="86z-Xh-nIf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HJG-3t-Dzc"/>
-                            <constraint firstItem="86z-Xh-nIf" firstAttribute="top" secondItem="Oki-4r-b4Q" secondAttribute="bottom" constant="22" id="Pjv-HO-dAf"/>
-                            <constraint firstItem="Oki-4r-b4Q" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="16" id="ZbC-Ed-RXM"/>
-                            <constraint firstItem="Oki-4r-b4Q" firstAttribute="centerX" secondItem="86z-Xh-nIf" secondAttribute="centerX" id="h4A-Oa-Fya"/>
-                            <constraint firstItem="86z-Xh-nIf" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="rxX-2k-ssW"/>
-                            <constraint firstAttribute="trailing" secondItem="86z-Xh-nIf" secondAttribute="trailing" id="vM4-Yx-fX7"/>
+                            <constraint firstItem="TZ3-50-hEW" firstAttribute="centerY" secondItem="8b2-9x-Ywg" secondAttribute="centerY" id="AUj-ZS-S3R"/>
+                            <constraint firstItem="TZ3-50-hEW" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="Pcd-nK-Ieo"/>
+                            <constraint firstItem="8b2-9x-Ywg" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="139" id="VDC-ZM-OG1"/>
+                            <constraint firstItem="TZ3-50-hEW" firstAttribute="centerX" secondItem="8b2-9x-Ywg" secondAttribute="centerX" id="a5q-W7-dfX"/>
+                            <constraint firstItem="TZ3-50-hEW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fi3-LO-E7g"/>
+                            <constraint firstItem="8b2-9x-Ywg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="19" id="kpb-Jt-OaF"/>
+                            <constraint firstAttribute="trailing" secondItem="TZ3-50-hEW" secondAttribute="trailing" id="q50-b8-8D6"/>
+                            <constraint firstItem="TZ3-50-hEW" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qTF-l6-r0n"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Oki-4r-b4Q"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Oki-4r-b4Q"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.625" y="373.94366197183098"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="622" height="778"/>
+        <image name="Logo" width="553" height="505"/>
+        <image name="backgr1" width="607" height="1080"/>
     </resources>
 </document>

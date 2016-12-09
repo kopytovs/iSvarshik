@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C53a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C60b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,9 +25,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6n1-Vf-kRx">
-                                <rect key="frame" x="52" y="295" width="213" height="34"/>
+                                <rect key="frame" x="52" y="295" width="213" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="mbe-DK-UUA"/>
+                                    <constraint firstAttribute="height" constant="46" id="mbe-DK-UUA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Рассчитать" backgroundImage="rasch">
@@ -49,11 +49,15 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Подсказки:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DQq-FW-Ude">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Подсказки: чтобы очистить поля - удерживайте палец на свободной зоне" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DQq-FW-Ude">
                                 <rect key="frame" x="11" y="420" width="298" height="65"/>
+                                <gestureRecognizers/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NNb-GZ-eXZ" appends="YES" id="M7h-2k-0tf"/>
+                                </connections>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" editable="NO" text="0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DEK-ef-yK8">
                                 <rect key="frame" x="189" y="337" width="120" height="34"/>
@@ -235,8 +239,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диаметр" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F6-HE-gw4">
-                                <rect key="frame" x="11" y="133" width="61" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Толщина" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F6-HE-gw4">
+                                <rect key="frame" x="11" y="133" width="61" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -304,7 +308,7 @@
                             <constraint firstItem="VNG-88-DuQ" firstAttribute="height" secondItem="YFS-uB-pWa" secondAttribute="height" id="Djf-SQ-yTw"/>
                             <constraint firstItem="W5c-5o-UqR" firstAttribute="leading" secondItem="0F6-HE-gw4" secondAttribute="trailing" constant="186" id="E73-Y4-4tv"/>
                             <constraint firstItem="cHF-co-U7N" firstAttribute="height" secondItem="YFS-uB-pWa" secondAttribute="height" id="EdZ-Eg-rx0"/>
-                            <constraint firstItem="KSx-2O-1gt" firstAttribute="top" secondItem="6n1-Vf-kRx" secondAttribute="bottom" constant="6" id="Fjr-hb-1Cj"/>
+                            <constraint firstItem="KSx-2O-1gt" firstAttribute="top" secondItem="6n1-Vf-kRx" secondAttribute="bottom" constant="-6" id="Fjr-hb-1Cj"/>
                             <constraint firstItem="hbI-YF-qsG" firstAttribute="width" secondItem="YFS-uB-pWa" secondAttribute="width" id="G5C-GA-6S3"/>
                             <constraint firstItem="gUe-8o-eYK" firstAttribute="firstBaseline" secondItem="34K-ju-hWO" secondAttribute="firstBaseline" id="HEZ-Qp-2Hj"/>
                             <constraint firstItem="AOe-GH-4yk" firstAttribute="height" secondItem="YFS-uB-pWa" secondAttribute="height" id="IE3-vl-arE"/>
@@ -342,7 +346,7 @@
                             <constraint firstItem="Ywd-Pz-epP" firstAttribute="leading" secondItem="AVB-74-tmE" secondAttribute="leading" id="YuV-aB-Q2U"/>
                             <constraint firstItem="BrM-eR-Ftx" firstAttribute="leading" secondItem="qLi-eM-dGP" secondAttribute="trailing" constant="40" id="Z3m-2o-HIa"/>
                             <constraint firstItem="6n1-Vf-kRx" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="36" id="Zqe-DA-wBe"/>
-                            <constraint firstItem="DEK-ef-yK8" firstAttribute="top" secondItem="6n1-Vf-kRx" secondAttribute="bottom" constant="8" symbolic="YES" id="aNb-fW-FSu"/>
+                            <constraint firstItem="DEK-ef-yK8" firstAttribute="top" secondItem="6n1-Vf-kRx" secondAttribute="bottom" constant="-4" id="aNb-fW-FSu"/>
                             <constraint firstItem="2uf-Ue-eYo" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="aOX-5c-DLB"/>
                             <constraint firstItem="DEK-ef-yK8" firstAttribute="leading" secondItem="RsH-LZ-uL8" secondAttribute="leading" id="aik-BP-yZj"/>
                             <constraint firstItem="52R-pM-3wU" firstAttribute="top" secondItem="AOe-GH-4yk" secondAttribute="bottom" constant="9" id="aqQ-SK-gBR"/>
@@ -435,6 +439,11 @@
                         <action selector="longTap:" destination="9pv-A4-QxB" id="gVN-Ta-x1c"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="NNb-GZ-eXZ">
+                    <connections>
+                        <action selector="longTapOnHelper:" destination="9pv-A4-QxB" id="1Cl-fM-jla"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1111.875" y="-532.3943661971831"/>
         </scene>
@@ -453,7 +462,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqv-QK-Way">
                                 <rect key="frame" x="50" y="70" width="220" height="120"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="38"/>
-                                <state key="normal" title="Глоссарий" backgroundImage="rasch">
+                                <state key="normal" title="Глоссарий" backgroundImage="glossary">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
@@ -466,7 +475,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-23-aWi">
                                 <rect key="frame" x="50" y="244" width="220" height="120"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="38"/>
-                                <state key="normal" title="Видеоуроки" backgroundImage="rasch">
+                                <state key="normal" title="Видеоуроки" backgroundImage="videolessons">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -592,11 +601,11 @@
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hRs-12-Ykq" id="KYH-yv-7Zq">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gof-bF-wE7">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -724,7 +733,7 @@
 - Инженерное сопровождение сварочных работ
 - Разработка технологий сварки
 - Поставка специальных сварочных материалов и оборудования</string>
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -779,6 +788,13 @@
                                     <action selector="send:" destination="oV4-0Q-sqT" eventType="touchUpInside" id="fSh-5y-q9O"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leI-aF-x9w">
+                                <rect key="frame" x="282" y="28" width="22" height="22"/>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="infoPush:" destination="oV4-0Q-sqT" eventType="touchUpInside" id="wbw-KB-Zao"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -790,7 +806,9 @@
                             <constraint firstItem="lVf-7h-Nm3" firstAttribute="width" secondItem="X4J-K5-TJd" secondAttribute="width" id="CqA-qA-plG"/>
                             <constraint firstItem="n2T-Yi-ae1" firstAttribute="leading" secondItem="TYe-LO-7Th" secondAttribute="leadingMargin" constant="5" id="EVf-HP-Ff6"/>
                             <constraint firstItem="n2T-Yi-ae1" firstAttribute="top" secondItem="AW7-5j-ngp" secondAttribute="bottom" constant="8" id="FVT-Eh-U7s"/>
+                            <constraint firstItem="leI-aF-x9w" firstAttribute="trailing" secondItem="AW7-5j-ngp" secondAttribute="trailing" id="HDS-a7-QDM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="n2T-Yi-ae1" secondAttribute="trailing" constant="111" id="Hu4-zQ-cn9"/>
+                            <constraint firstItem="leI-aF-x9w" firstAttribute="top" secondItem="upy-Jq-cqy" secondAttribute="bottom" constant="8" symbolic="YES" id="J1d-km-vZG"/>
                             <constraint firstItem="AW7-5j-ngp" firstAttribute="top" secondItem="upy-Jq-cqy" secondAttribute="bottom" id="KiE-qC-ton"/>
                             <constraint firstItem="eDM-nT-stg" firstAttribute="top" secondItem="n2T-Yi-ae1" secondAttribute="bottom" constant="27" id="Knc-rU-o7V"/>
                             <constraint firstItem="X4J-K5-TJd" firstAttribute="top" secondItem="AW7-5j-ngp" secondAttribute="bottom" constant="51" id="KzD-UL-kSJ"/>
@@ -871,11 +889,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Call" width="100" height="100"/>
-        <image name="Mail" width="100" height="100"/>
+        <image name="Call" width="98" height="98"/>
+        <image name="Mail" width="98" height="98"/>
         <image name="Third" width="32" height="32"/>
+        <image name="glossary" width="667" height="329"/>
         <image name="one" width="32" height="32"/>
-        <image name="rasch" width="600" height="309"/>
+        <image name="rasch" width="383" height="106"/>
         <image name="two" width="32" height="32"/>
+        <image name="videolessons" width="667" height="329"/>
     </resources>
 </document>

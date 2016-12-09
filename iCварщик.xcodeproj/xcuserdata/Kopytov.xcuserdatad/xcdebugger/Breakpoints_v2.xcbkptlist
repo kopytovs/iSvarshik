@@ -10,54 +10,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "483"
-            endingLineNumber = "483"
-            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
             timestampString = "499109656.909707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -74,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
+            timestampString = "502960430.87807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "FirstViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -170,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
+            timestampString = "502960430.87807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "FirstViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -202,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
+            timestampString = "502960430.87807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "723"
-            endingLineNumber = "723"
+            startingLineNumber = "730"
+            endingLineNumber = "730"
             landmarkName = "calc(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
+            timestampString = "502960430.87807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "774"
-            endingLineNumber = "774"
+            startingLineNumber = "781"
+            endingLineNumber = "781"
             landmarkName = "calc(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
+            timestampString = "502960430.87807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "789"
-            endingLineNumber = "789"
+            startingLineNumber = "796"
+            endingLineNumber = "796"
             landmarkName = "calc(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i&#x441;&#x432;&#x430;&#x440;&#x449;&#x438;&#x43a;/FirstViewController.swift"
-            timestampString = "502657970.232932"
+            timestampString = "502960430.87807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "902"
-            endingLineNumber = "902"
+            startingLineNumber = "909"
+            endingLineNumber = "909"
             landmarkName = "temp(_:cek:)"
             landmarkType = "9">
          </BreakpointContent>

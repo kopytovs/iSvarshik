@@ -63,6 +63,19 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
         }
     }
     
+    @IBAction func infoPush(_ sender: Any) {
+        let alert = UIAlertController(title: "Помощь", message: "Добро пожаловать в приложение iСварщик! Здесь вы можете рассчитать C эквивалентное, а также t подогрева для сварки различной стали. Вы можете ввести хим. состав стали вручную, либо выбрать из приведенного списка (список будет пополняться). Также в приложении присутствует глоссарий с различными терминами (также будет пополняться), и вкладка с видеоуроками с нашего youtube канала! За всеми вопросами обращаться в email, указанный ниже, либо разработчику приложения на email kopytov@me.com.", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Спасибо!", style: .default, handler: nil)
+        
+        alert.addAction(ok)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
