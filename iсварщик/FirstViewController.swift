@@ -31,7 +31,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     let names = ["Сталь констр. углеродистая качественная", "Сталь констр. низколегированная для сварных конструкций"]
     
     let arr1 = ["|Пусто|", "05кп", "08", "08кп", "08пс", "08Фкп", "08Ю", "08ЮА", "10", "10кп", "10пс", "10ЮА", "11кп", "11ЮА", "12К", "15", "15К", "15кп", "15пс", "15ЮА", "16К", "18К", "18кп", "18ЮА", "20", "20-ПВ", "20А", "20К", "20кп", "20пс", "20ЮА", "22К", "25", "25пс", "30", "35", "40", "45", "50", "50А", "55", "58", "60", "ОсВ"]
-    let arr4 = ["|Пусто|", "06Г2СЮ", "06ХГСЮ", "08Г2С", "08ГБЮ", "09Г2", "09Г2Д", "09Г2С", "09Г2СД", "09Г2ФБ", "09ГБЮ", "10Г2Б", "10Г2С", "10Г2С1Д", "10Г2СБ", "10Г2СФБ", "10Г2ФБ", "10Г2ФБЮ", "10ГС2", "10ГТ", "10Х2М1", "10ХГСН1Д", "10ХНДП", "10ХСНД", "12Г2Б", "12Г2С", "12Г2СБ", "12Г2СМФ", "12ГН2МФАЮ", "12ГС", "12ГСБ", "12ГФ-Ш", "12Х8", "12ХГН2МФБАЮ", "13Г1С-У", "13Г1СБ-У", " 13Г2АФ", "13ГС", "14Г2", "14Г2АФ", "14Г2АФД", "14ХГС", "15Г2АФД", "15Г2АФДпс", "15Г2СФ", "15Г2СФД", "15ГС", "15ГФ", "15ГФД", "15ХСНД", "16Г2АФ", "16Г2АФД", "16Г2САФ", "16Г2СФ", "16ГС", "16ГС-Ш", "16Д", "17Г1С", "17Г1С-У", "17ГС", "18Г2АФ", "18Г2АФД", "8Г2АФДпс", "18Г2АФпс", "1Х2М1", "20ГС", "20ГС2", "20Х2Г2СР", "20ХГ2Т", "20ХГ2Ц", "20ХГС2", "22ГЮ", "22С", "22Х2Г2АЮ", "22Х2Г2Р", "23Х2Г2Т", "23Х2Г2Ц", "25Г2С", "25ГС", "25С2Р", "27ГС", "28С", "30ХС2", "32Г2Рпс", "35ГС", "6Г2АФ", "6Г2АФ"]
+    let arr4 = ["06Г2СЮ", "06ХГСЮ", "08Г2С", "08ГБЮ", "09Г2", "09Г2Д", "09Г2С", "09Г2СД", "09Г2ФБ", "09ГБЮ", "10Г2Б", "10Г2БД", "10Г2С1", "10Г2С1Д", "10Г2СБ", "10Г2СФБ", "10Г2ФБ", "10Г2ФБЮ", "10ГС2", "10ГТ", "10Х2М1", "10ХГСН1Д", "10ХНДП", "10ХСНД", "12Г2Б", "12Г2С", "12Г2СБ", "12Г2СМФ", "12ГН2МФАЮ", "12ГС", "12ГСБ", "12ГФ-Ш", "12Х8", "12ХГН2МФБАЮ", "13Г1С-У", "13Г1СБ-У", " 13Г2АФ", "13ГС", "14Г2", "14Г2АФ", "14Г2АФД", "14ХГС", "15Г2АФД", "15Г2АФДпс", "15Г2СФ", "15Г2СФД", "15ГС", "15ГФ", "15ГФД", "15ХСНД", "16Г2АФ", "16Г2АФД", "16Г2САФ", "16Г2СФ", "16ГС", "16ГС-Ш", "16Д", "17Г1С", "17Г1С-У", "17ГС", "18Г2АФ", "18Г2АФД", "18Г2АФДпс", "18Г2АФпс", "18Г2С", "1Х2М1", "20ГС", "20ГС2", "20Х2Г2СР", "20ХГ2Т", "20ХГ2Ц", "20ХГС2", "22ГЮ", "22С", "22Х2Г2АЮ", "22Х2Г2Р", "23Х2Г2Т", "23Х2Г2Ц", "25Г2С", "25ГС", "25С2Р",  "27ГС", "28С", "30ХС2", "32Г2Рпс", "35ГС", "6Г2АФ", "6Г2АФ"]
 
     
     var choosen = 0
@@ -114,6 +114,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     @IBAction func longTapOnHelper(_ sender: Any) {
         self.clearAll()
     }
+    @IBAction func tapOnPicker(_ sender: Any) {
+        self.dismissKeyboard()
+    }
     
     
     // returns the number of 'columns' to display.
@@ -148,9 +151,17 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         if component == 0{
-            return 75
+            return 65
         } else{
             return 25
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        if component == 0 {
+            return UIScreen.main.bounds.width * 5/8
+        } else {
+            return UIScreen.main.bounds.width * 1/4
         }
     }
     
@@ -198,7 +209,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
         if component == 0{
             nameText.text = names[row]
+            nameText.font.withSize(14)
         } else{
+            
+            nameText.font.withSize(33)
             
             switch self.picker.selectedRow(inComponent: 0){
             case 0:
@@ -212,9 +226,18 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
         nameText.textAlignment = NSTextAlignment.center
         
-        nameText.numberOfLines = 3
+        nameText.numberOfLines = 0
         
         nameText.textColor = UIColor.white
+        
+        //nameText.tintColor = UIColor.orange
+        
+        //nameText.layer.borderWidth = 1
+        
+        //nameText.layer.borderColor = UIColor.orange.cgColor
+        
+        pickerView.subviews[1].backgroundColor = UIColor.orange
+        pickerView.subviews[2].backgroundColor = UIColor.orange
         
         return nameText
         
