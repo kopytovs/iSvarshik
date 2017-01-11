@@ -57,6 +57,8 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
             mail.setToRecipients(["info@se123.ru"])
             mail.setMessageBody("<p>Приветствую, Спецэлектрод-Сервис!</p>", isHTML: true)
             
+            mail.view.tintColor = UIColor.orange
+            
             present(mail, animated: true)
         } else {
             // show failure alert
@@ -64,11 +66,13 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func infoPush(_ sender: Any) {
-        let alert = UIAlertController(title: "Помощь", message: "Добро пожаловать в приложение iСварщик! Здесь вы можете рассчитать C эквивалентное, а также t подогрева для сварки различной стали. Вы можете ввести хим. состав стали вручную, либо выбрать из приведенного списка (список будет пополняться). Также в приложении присутствует глоссарий с различными терминами (также будет пополняться), и вкладка с видеоуроками с нашего youtube канала! За всеми вопросами обращаться в email, указанный ниже, либо разработчику приложения на email kopytov@me.com.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Помощь", message: "Добро пожаловать в приложение iСварщик! Здесь вы можете рассчитать эквивалент углерода (С экв.), а также температуру предварительного подогрева для сварки сталей различных марок. Вы можете ввести значения содержания химических элементов состава стали или выбрать из перечня (перечень будет дополняться). Также приложение имеет глоссарий терминов, употребляемых в сварке (глоссарий постепенно будет дополняться новыми терминами), а также видеоуроки об особенностях технологии сварки различных материалов. За всеми вопросами обращаться в email, указанный ниже, либо звонить по телефону.", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "Спасибо!", style: .default, handler: nil)
         
         alert.addAction(ok)
+        
+        alert.view.tintColor = UIColor.orange
         
         present(alert, animated: true, completion: nil)
         

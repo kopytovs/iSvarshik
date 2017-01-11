@@ -27,6 +27,14 @@ class Cell: UIViewController {
     
     @IBOutlet weak var form: UIImageView!
     
+    @IBOutlet weak var formUNI: UIImageView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var image = UIImage()
+    
+    var choose = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Name.text = Termin.mas[Termin.choose]
@@ -35,29 +43,165 @@ class Cell: UIViewController {
         
         //print ("блаблабла: \(exp.count)")
         
+        self.explain.isScrollEnabled = false
+        
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr2"))
         
         text1.text = name as String
         
         explain.text = exp[name]! as String
         
-        if name == "Погонная энергия El" {
-            //explain.frame.size.height -= form.frame.height
-            form.image = #imageLiteral(resourceName: "pogon")
-        } else if name == "Эффективный КПД процесса нагрева"{
-            //explain.frame.size.height -= form.frame.height
-            form.image = #imageLiteral(resourceName: "otnosh")
-        } else if name == "Плотность эффективной энергии Ql" {
-            //explain.frame.size.height -= form.frame.height
-            form.image = #imageLiteral(resourceName: "plotnost")
-        } else if name == "Точечная контактная сварка" {
+        formUNI.isHidden = true
+        
+        switch name {
             
-            form.image = #imageLiteral(resourceName: "tochechn")
+        case "Погонная энергия El":
             
-        }   else {
-            //explain.frame.size.height += form.frame.height
-            form.image = nil
+            formUNI.image = #imageLiteral(resourceName: "pogon")
+            image = formUNI.image!
+            formUNI.isHidden = false
+            form.isHidden = true
+            choose = false
+            break
+            
+        case "Эффективный КПД процесса нагрева":
+            
+            formUNI.image = #imageLiteral(resourceName: "otnosh")
+            image = formUNI.image!
+            formUNI.isHidden = false
+            form.isHidden = true
+            choose = false
+            break
+            
+        case "Плотность эффективной энергии Ql" :
+            formUNI.image = #imageLiteral(resourceName: "plotnost")
+            image = formUNI.image!
+            formUNI.isHidden = false
+            form.isHidden = true
+            choose = false
+            break
+            
+        case "Сварка взрывом" :
+            form.image = #imageLiteral(resourceName: "i11")
+            image = form.image!
+            break
+            
+        case "Точечная контактная сварка":
+            form.image = #imageLiteral(resourceName: "i20")
+            image = form.image!
+            break
+            
+        case "Шовная сварка внахлестку":
+            form.image = #imageLiteral(resourceName: "i21")
+            image = form.image!
+            break
+            
+        case "Рельефная сварка":
+            form.image = #imageLiteral(resourceName: "i25")
+            image = form.image!
+            break
+            
+        case "Стыковая сварка сопротивлением":
+            form.image = #imageLiteral(resourceName: "i26")
+            image = form.image!
+            break
+            
+        case "Стыковая сварка оплавлением":
+            form.image = #imageLiteral(resourceName: "i27")
+            image = form.image!
+            break
+            
+        case "Индукционная сварка":
+            form.image = #imageLiteral(resourceName: "i29")
+            image = form.image!
+            break
+            
+        case "Сварка трением с перемешиванием":
+            form.image = #imageLiteral(resourceName: "i34")
+            image = form.image!
+            break
+            
+        case "Диффузионная сварка":
+            form.image = #imageLiteral(resourceName: "i31")
+            image = form.image!
+            break
+            
+        case "Термитная сварка":
+            form.image = #imageLiteral(resourceName: "i35")
+            image = form.image!
+            break
+            
+        case "Лазерная сварка":
+            form.image = #imageLiteral(resourceName: "i48")
+            image = form.image!
+            break
+            
+        case "Электрошлаковая сварка":
+            form.image = #imageLiteral(resourceName: "i50")
+            image = form.image!
+            break
+            
+        case "Левый способ сварки":
+            form.image = #imageLiteral(resourceName: "i52")
+            image = form.image!
+            break
+            
+        case "Правый способ сварки":
+            form.image = #imageLiteral(resourceName: "i53")
+            image = form.image!
+            break
+            
+        case "Обратноступенчатая сварка":
+            form.image = #imageLiteral(resourceName: "i54")
+            image = form.image!
+            break
+            
+        case "Сварка углом вперед":
+            form.image = #imageLiteral(resourceName: "i55")
+            image = form.image!
+            break
+            
+        case "Сварка углом назад":
+            form.image = #imageLiteral(resourceName: "i56")
+            image = form.image!
+            break
+            
+        case "Сварка с поперечным колебанием горелки":
+            form.image = #imageLiteral(resourceName: "i57")
+            image = form.image!
+            break
+            
+        case "Наклон горелки":
+            form.image = #imageLiteral(resourceName: "i59")
+            image = form.image!
+            break
+            
+        case "Угол между горелкой и изделием":
+            form.image = #imageLiteral(resourceName: "i60")
+            image = form.image!
+            break
+            
+        case "Расстояние от мундштука до изделия":
+            form.image = #imageLiteral(resourceName: "i61")
+            image = form.image!
+            break
+            
+        default :
+            form.isHidden = true
+            break
+            
         }
+        
+        self.explain.isScrollEnabled = true
+        
+        if choose {
+            //self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 600)
+            
+        }
+        
+        var frame: CGRect = scrollView.frame
+        frame.size = scrollView.contentSize
+        scrollView.frame = frame
         
         //exp = Array(exp1.keys).sorted(<)
         
@@ -71,6 +215,15 @@ class Cell: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func shareImage(_ sender: Any) {
+        
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
     
 
     /*
