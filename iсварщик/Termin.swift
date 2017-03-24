@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//import Firebase
+import FirebaseDatabase
 
 class Termin: UITableViewController, UISearchBarDelegate{
     
@@ -14,7 +16,15 @@ class Termin: UITableViewController, UISearchBarDelegate{
     
     @IBOutlet weak var SBar: UISearchBar!
     
-    let mas = ["Автоматическая сварка", "Вводная планка", "Вылет электрода", "Газовая сварка", "Двусторонняя сварка", "Диффузионная сварка", "Дуговая сварка", "Индукционная сварка", "Контактная сварка", "Лазерная сварка", "Левый способ сварки", "Место возобновления шва", "Многопроходная сварка", "Наклон горелки", "Наплавка (сваркой)", "Неостающаяся подкладка", "Обратноступенчатая сварка", "Однопроходная сварка", "Односторонняя сварка", "Остающаяся подкладка", "Параметры сварки", "Погонная энергия El", "Подкладка", "Плотность эффективной энергии Ql", "Полностью механизированная сварка", "Правый способ сварки", "Прихватка", "Производительность наплавки", "Расстояние от мундштука до изделия", "Рельефная сварка", "Роботизированная сварка", "Ручная сварка", "Сварка взрывом", "Сварка давлением", "Сварка металлов", "Сварка плавлением", "Сварка прихватками", "Сварка с поперечным колебанием горелки", "Сварка трением", "Сварка трением с перемешиванием", "Сварка углом вперед", "Сварка углом назад", "Скорость сварки", "Соединение (сваркой)", "Стыковая сварка оплавлением", "Стыковая сварка сопротивлением", "Температура между проходами Тi", "Температура предварительного подогрева Тр", "Термитная сварка", "Точечная контактная сварка", "Угол между горелкой и изделием", "Холодная сварка", "Частично механизированная сварка", "Шовная сварка внахлестку", "Электрошлаковая сварка", "Эффективный КПД процесса нагрева"]
+    //let mas = ["Автоматическая сварка", "Вводная планка", "Вылет электрода", "Газовая сварка", "Двусторонняя сварка", "Диффузионная сварка", "Дуговая сварка", "Индукционная сварка", "Контактная сварка", "Лазерная сварка", "Левый способ сварки", "Место возобновления шва", "Многопроходная сварка", "Наклон горелки", "Наплавка (сваркой)", "Неостающаяся подкладка", "Обратноступенчатая сварка", "Однопроходная сварка", "Односторонняя сварка", "Остающаяся подкладка", "Параметры сварки", "Погонная энергия El", "Подкладка", "Плотность эффективной энергии Ql", "Полностью механизированная сварка", "Правый способ сварки", "Прихватка", "Производительность наплавки", "Расстояние от мундштука до изделия", "Рельефная сварка", "Роботизированная сварка", "Ручная сварка", "Сварка взрывом", "Сварка давлением", "Сварка металлов", "Сварка плавлением", "Сварка прихватками", "Сварка с поперечным колебанием горелки", "Сварка трением", "Сварка трением с перемешиванием", "Сварка углом вперед", "Сварка углом назад", "Скорость сварки", "Соединение (сваркой)", "Стыковая сварка оплавлением", "Стыковая сварка сопротивлением", "Температура между проходами Тi", "Температура предварительного подогрева Тр", "Термитная сварка", "Точечная контактная сварка", "Угол между горелкой и изделием", "Холодная сварка", "Частично механизированная сварка", "Шовная сварка внахлестку", "Электрошлаковая сварка", "Эффективный КПД процесса нагрева"]
+    
+    //var dataBase = FIRDatabase.database().reference()
+    
+    let terminsRef = FIRDatabase.database().reference().child("Termins")
+    
+    var mas = Array<String>()
+    
+    var exp_dict = Dictionary<String, String>()
     
     var choose = 0
     
@@ -28,54 +38,33 @@ class Termin: UITableViewController, UISearchBarDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(Termin.dismissKeyboard))
-        //view.addGestureRecognizer(tap)
-        
-        self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
+        //self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
         SBar.keyboardAppearance = .dark
-        
-        //let sorted_mas = mas.sorted(by: <)
-        
-        //print(sorted_mas)
         
         SBar.showsCancelButton = false
         
         temp = SBar.text!
-        
-        //print (mas.count)
         
         tableView.delegate = self
         tableView.dataSource = self
         
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
         
-        //self.searchController.searchResultsUpdater = self
+        self.loadInfo()
         
-        //SearchB = searchController.searchBar
-        
-        //searchController = UISearchController(searchResultsController: nil)
-        
-       // tableView.tableHeaderView = searchController.searchBar
     }
+    
+    //@IBAction func unwindToSecond(segue: UIStoryboardSegue){
+        //self.performSegue(withIdentifier: "fromTerminsToSecond", sender: self)
+    //}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /*@IBAction func Tapping(_ sender: Any) {
-        
-        self.dismissKeyboard()
-        
-    }*/
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -83,11 +72,6 @@ class Termin: UITableViewController, UISearchBarDelegate{
     }
 
     // MARK: - Table view data source
-
-    /*override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }*/
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -104,73 +88,28 @@ class Termin: UITableViewController, UISearchBarDelegate{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TCell", for: indexPath) as UITableViewCell
-        
-        /*if (SActive && !filtered.isEmpty) {
-            
-            cell.textLabel?.text = filtered[indexPath.row] as String
-            
-        } else{
-            
-            cell.textLabel?.text = mas[indexPath.row] as String
-            
-        }*/
 
         cell.textLabel?.text = (SActive && !filtered.isEmpty) ? filtered[indexPath.row] as String : mas[indexPath.row] as String
         
         cell.textLabel?.textColor = UIColor.white
         
-        //cell.textLabel?.text = (SActive && !(SBar.text?.isEmpty)!) ? filtered[indexPath.row] as String : mas[indexPath.row] as String
-        
-        // Configure the cell...
+        cell.backgroundColor = .clear
 
         return cell
     }
- 
-    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        
-        choose = indexPath.row
-    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        //if segue.identifier == "showDetail"{
             
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! Cell
                 destinationController.name = ((SActive) && !(filtered.isEmpty)) ? filtered[indexPath.row] : mas[indexPath.row]
-                //destinationController.name = mas
-                //destinationController.page = (indexPath.row)
-            //}
-            
+                destinationController.exp = (((SActive) && !(filtered.isEmpty)) ? exp_dict[filtered[indexPath.row]] : exp_dict[mas[indexPath.row]])!
         }
-        
-        /*var path = table.indexPathForSelectedRow
-        
-        let detailViewController = segue.destination as! Cell
-        
-        detailViewController.page = (path?.row)!
-        
-        detailViewController.name = mas*/
         
     }
     
-    
-    /*func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            filterContent(searchText: searchText)
-            tableView.reloadData()
-        }
-    }
-    
-    func filterContent (searchText : String){
-        filtered = mas.filter({ (les : String) -> Bool in
-            let nameMatch = les.range(of: searchText, options: String.CompareOptions.caseInsensitive)
-            return nameMatch != nil
-        })
-    }*/
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
@@ -214,73 +153,61 @@ class Termin: UITableViewController, UISearchBarDelegate{
         self.tableView.reloadData()
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    //override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.backgroundColor = .clear
+        /*cell.center.x += self.view.bounds.height
         
-        cell.alpha = 0
+        UIView.animate(withDuration: 0.7, delay: 0.1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: .curveLinear, animations: {
         
-        UIView.animate(withDuration: 0.5, animations: {cell.alpha = 1})
+            cell.center.x -= self.view.bounds.height
         
-    }
-
+        }, completion: nil)*/
+        
+    //}
     
-    /*func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+    private func loadInfo(){
         
-            var path = table.indexPathForSelectedRow
+        //var index = 83
+        
+        terminsRef.queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: {snap in
             
-            let detailViewController = segue.destination as! Cell
+            if (snap.value is NSNull) {
+                print ("беда")
+                self.isLoadInfo()
+            } else{
+                for child in snap.children{
+                    let data = child as! FIRDataSnapshot
+                    let value = data.value! as! [String:Any]
+                    let tmp_name: String = value["name"] as! String
+                    let tmp_descr: String = value["description"] as! String
+                    self.mas.append(tmp_name)
+                    self.exp_dict[tmp_name] = tmp_descr
+                }
+                self.isLoadInfo()
+                self.tableView.reloadData()
+            }
         
-            detailViewController.page = (path?.row)!
+        })
         
-            detailViewController.name = mas
         
-        }*/
+        
+    }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    private func isLoadInfo(){
+        if self.mas.isEmpty{
+            let alert = UIAlertController(title: "Ошибка", message: "Невозможно загрузить данные, отсутствует подключение к интернету. Пожалуйста проверьте свое подключение и повторите попытку.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .destructive, handler: {action -> Void in
+                
+                self.performSegue(withIdentifier: "fromTerminsToSecond", sender: self)
+                
+            })
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }
+
+

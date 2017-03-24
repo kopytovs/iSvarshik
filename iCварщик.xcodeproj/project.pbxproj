@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93276FAD1E633E250074A962 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93276FAC1E633E250074A962 /* GoogleService-Info.plist */; };
 		9352FB2C1DC2CFF000DC0B60 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */; };
 		939921551DAD3FDF0043B058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921541DAD3FDF0043B058 /* AppDelegate.swift */; };
 		939921571DAD3FDF0043B058 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921561DAD3FDF0043B058 /* FirstViewController.swift */; };
@@ -18,9 +19,12 @@
 		93A988F11DC3588C00E9E203 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A988F01DC3588C00E9E203 /* Cell.swift */; };
 		93F92A031DD23369005F8809 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F92A021DD23369005F8809 /* CollectionViewController.swift */; };
 		93F92A051DD2838A005F8809 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F92A041DD2838A005F8809 /* CollectionViewCell.swift */; };
+		EE731D86576E7B3C148999F6 /* Pods_i_______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839198A823EAD93B2AEA98BE /* Pods_i_______.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		839198A823EAD93B2AEA98BE /* Pods_i_______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_i_______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93276FAC1E633E250074A962 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		939921511DAD3FDF0043B058 /* iсварщик.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iсварщик.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		939921541DAD3FDF0043B058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		93A988F51DC3C72700E9E203 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93F92A021DD23369005F8809 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		93F92A041DD2838A005F8809 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B55C3CCE2D658987642F2578 /* Pods-iсварщик.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iсварщик.release.xcconfig"; path = "Pods/Target Support Files/Pods-iсварщик/Pods-iсварщик.release.xcconfig"; sourceTree = "<group>"; };
+		F9B5C6D4A3713441FF189347 /* Pods-iсварщик.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iсварщик.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iсварщик/Pods-iсварщик.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE731D86576E7B3C148999F6 /* Pods_i_______.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23AF57F03608365907CFE8C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				839198A823EAD93B2AEA98BE /* Pods_i_______.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		939921481DAD3FDF0043B058 = {
 			isa = PBXGroup;
 			children = (
 				939921531DAD3FDF0043B058 /* iсварщик */,
 				939921521DAD3FDF0043B058 /* Products */,
+				B0CBC57ECAD97AF29291C810 /* Pods */,
+				23AF57F03608365907CFE8C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +95,18 @@
 				9399215D1DAD3FDF0043B058 /* Assets.xcassets */,
 				9399215F1DAD3FDF0043B058 /* LaunchScreen.storyboard */,
 				939921621DAD3FDF0043B058 /* Info.plist */,
+				93276FAC1E633E250074A962 /* GoogleService-Info.plist */,
 			);
 			path = "iсварщик";
+			sourceTree = "<group>";
+		};
+		B0CBC57ECAD97AF29291C810 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9B5C6D4A3713441FF189347 /* Pods-iсварщик.debug.xcconfig */,
+				B55C3CCE2D658987642F2578 /* Pods-iсварщик.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 939921651DAD3FDF0043B058 /* Build configuration list for PBXNativeTarget "iсварщик" */;
 			buildPhases = (
+				23052BFA9223FA30E970661C /* [CP] Check Pods Manifest.lock */,
 				9399214D1DAD3FDF0043B058 /* Sources */,
 				9399214E1DAD3FDF0043B058 /* Frameworks */,
 				9399214F1DAD3FDF0043B058 /* Resources */,
+				64660A778217252C738B7628 /* [CP] Embed Pods Frameworks */,
+				6D9E263FEF51671B0F269C34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,12 +173,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				939921611DAD3FDF0043B058 /* LaunchScreen.storyboard in Resources */,
+				93276FAD1E633E250074A962 /* GoogleService-Info.plist in Resources */,
 				9399215E1DAD3FDF0043B058 /* Assets.xcassets in Resources */,
 				9399215C1DAD3FDF0043B058 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23052BFA9223FA30E970661C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		64660A778217252C738B7628 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iсварщик/Pods-iсварщик-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D9E263FEF51671B0F269C34 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iсварщик/Pods-iсварщик-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9399214D1DAD3FDF0043B058 /* Sources */ = {
@@ -280,6 +359,7 @@
 		};
 		939921661DAD3FDF0043B058 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9B5C6D4A3713441FF189347 /* Pods-iсварщик.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -297,6 +377,7 @@
 		};
 		939921671DAD3FDF0043B058 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B55C3CCE2D658987642F2578 /* Pods-iсварщик.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

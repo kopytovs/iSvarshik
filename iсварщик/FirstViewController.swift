@@ -8,18 +8,18 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
-    @IBOutlet var C: UITextField!
-    @IBOutlet var Si: UITextField!
-    @IBOutlet var Mn: UITextField!
-    @IBOutlet var Cr: UITextField!
-    @IBOutlet var Mo: UITextField!
-    @IBOutlet var Ni: UITextField!
-    @IBOutlet var Cu: UITextField!
-    @IBOutlet var V: UITextField!
-    @IBOutlet var P: UITextField!
-    @IBOutlet var diam: UITextField!
+    @IBOutlet weak var C: UITextField!
+    @IBOutlet weak var Si: UITextField!
+    @IBOutlet weak var Mn: UITextField!
+    @IBOutlet weak var Cr: UITextField!
+    @IBOutlet weak var Mo: UITextField!
+    @IBOutlet weak var Ni: UITextField!
+    @IBOutlet weak var Cu: UITextField!
+    @IBOutlet weak var V: UITextField!
+    @IBOutlet weak var P: UITextField!
+    @IBOutlet weak var diam: UITextField!
     
     //var numberOfEn = 0
     
@@ -246,7 +246,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
     }
     
-    func mark (_ C1: Double, Mn1: Double, Cr1: Double, Mo1: Double, Ni1: Double, Cu1: Double, V1: Double)
+    /*func mark (_ C1: Double, Mn1: Double, Cr1: Double, Mo1: Double, Ni1: Double, Cu1: Double, V1: Double)
     {
         C.text = String(C1)
         Mn.text = String(Mn1)
@@ -256,9 +256,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         Cu.text = String(Cu1)
         V.text = String(V1)
 
-    }
+    }*/
     
-    func mark2 (_ C1: Double, Si1: Double, Mn1: Double, Cr1: Double, Mo1: Double, Ni1: Double, Cu1: Double, V1: Double, P1: Double){
+    func mark (_ C1: Double, Si1: Double, Mn1: Double, Cr1: Double, Mo1: Double, Ni1: Double, Cu1: Double, V1: Double, P1: Double){
     //func mark2 (_ C1: Double, Si1: Double, Mn1: Double, Cr1: Double, Ni1: Double, Cu1: Double, V1: Double, P1: Double){
         
         C.text = String(C1)
@@ -322,175 +322,175 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             break
             
         case 1:
-            mark(0.06, Mn1: 0.4, Cr1: 0.1, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0)
+            mark(0.06, Si1: 0, Mn1: 0.4, Cr1: 0.1, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0)
             break
             
         case 2:
-            mark(0.12,Mn1: 0.65,Cr1: 0.1,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.12,Si1: 0,Mn1: 0.65,Cr1: 0.1,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 3:
-            mark(0.12,Mn1: 0.5,Cr1: 0.1,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.12,Si1: 0,Mn1: 0.5,Cr1: 0.1,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
         
         case 4:
-            mark(0.11,Mn1: 0.65,Cr1: 0.1,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.11,Si1: 0,Mn1: 0.65,Cr1: 0.1,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 5:
-            mark(0.08,Mn1: 0.4,Cr1: 0.03,Mo1: 0,Ni1: 0.01,Cu1: 0.01,V1: 0.04)
+            mark(0.08,Si1: 0,Mn1: 0.4,Cr1: 0.03,Mo1: 0,Ni1: 0.01,Cu1: 0.01,V1: 0.04, P1: 0)
             break
             
         case 6:
-            mark(0.07,Mn1: 0.35,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0)
+            mark(0.07,Si1: 0,Mn1: 0.35,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0, P1: 0)
             break
             
         case 7:
-            mark(0.1,Mn1: 0.4,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0)
+            mark(0.1,Si1: 0,Mn1: 0.4,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 8:
-            mark(0.14,Mn1: 0.65,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.14,Si1: 0,Mn1: 0.65,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 9:
-            mark(0.14,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.14,Si1: 0,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 10:
-            mark(0.14,Mn1: 0.65,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.14,Si1: 0,Mn1: 0.65,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 11:
-            mark(0.14,Mn1: 0.4,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0)
+            mark(0.14,Si1: 0,Mn1: 0.4,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 12:
-            mark(0.12,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.2,V1: 0)
+            mark(0.12,Si1: 0,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 13:
-            mark(0.13,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.25,Cu1: 0.2,V1: 0)
+            mark(0.13,Si1: 0,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.25,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 14:
-            mark(0.16,Mn1: 0.7,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.16,Si1: 0,Mn1: 0.7,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 15:
-            mark(0.19,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.19,Si1: 0,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 16:
-            mark(0.2,Mn1: 0.65,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.2,Si1: 0,Mn1: 0.65,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 17:
-            mark(0.19,Mn1: 0.5,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.19,Si1: 0,Mn1: 0.5,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 18:
-            mark(0.19,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.19,Si1: 0,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 19:
-            mark(0.18,Mn1: 0.45,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0)
+            mark(0.18,Si1: 0,Mn1: 0.45,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 20:
-            mark(0.2,Mn1: 0.75,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.2,Si1: 0,Mn1: 0.75,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 21:
-            mark(0.22,Mn1: 0.85,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.22,Si1: 0,Mn1: 0.85,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 22:
-            mark(0.2,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.2,V1: 0)
+            mark(0.2,Si1: 0,Mn1: 0.5,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 23:
-            mark(0.22,Mn1: 0.4,Cr1: 0.15,Mo1: 0,Ni1: 0.25,Cu1: 0.2,V1: 0)
+            mark(0.22,Si1: 0,Mn1: 0.4,Cr1: 0.15,Mo1: 0,Ni1: 0.25,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 24:
-            mark(0.24,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.24,Si1: 0,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 25:
-            mark(0.24,Mn1: 0.65,Cr1: 0.15,Mo1: 0,Ni1: 0.15,Cu1: 0.15,V1: 0)
+            mark(0.24,Si1: 0,Mn1: 0.65,Cr1: 0.15,Mo1: 0,Ni1: 0.15,Cu1: 0.15,V1: 0, P1: 0)
             break
             
         case 26:
-            mark(0.24,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.25,Cu1: 0,V1: 0)
+            mark(0.24,Si1: 0,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.25,Cu1: 0,V1: 0, P1: 0)
             break
             
         case 27:
-            mark(0.24,Mn1: 0.65,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.24,Si1: 0,Mn1: 0.65,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 28:
-            mark(0.24,Mn1: 0.5,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.24,Si1: 0,Mn1: 0.5,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 29:
-            mark(0.24,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.24,Si1: 0,Mn1: 0.65,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 30:
-            mark(0.22,Mn1: 0.45,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0)
+            mark(0.22,Si1: 0,Mn1: 0.45,Cr1: 0.1,Mo1: 0,Ni1: 0.15,Cu1: 0.2,V1: 0, P1: 0)
             break
             
         case 31:
-            mark(0.26,Mn1: 1,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.26,Si1: 0,Mn1: 1,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 32:
-            mark(0.3,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.3,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 33:
-            mark(0.27,Mn1: 0.5,Cr1: 0.25,Mo1: 0,Ni1: 0.25,Cu1: 0.3,V1: 0)
+            mark(0.27,Si1: 0,Mn1: 0.5,Cr1: 0.25,Mo1: 0,Ni1: 0.25,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 34:
-            mark(0.35,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.35,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 35:
-            mark(0.4,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.4,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 36:
-            mark(0.45,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.45,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 37:
-            mark(0.5,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.5,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 38:
-            mark(0.55,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.55,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 39:
-            mark(0.55,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.55,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 40:
-            mark(0.5,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.5,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 41:
-            mark(0.63,Mn1: 0.2,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.63,Si1: 0,Mn1: 0.2,Cr1: 0.15,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 42:
-            mark(0.65,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0)
+            mark(0.65,Si1: 0,Mn1: 0.8,Cr1: 0.25,Mo1: 0,Ni1: 0.3,Cu1: 0.3,V1: 0, P1: 0)
             break
             
         case 43:
-            mark(0.48,Mn1: 0.85,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.25,V1: 0)
+            mark(0.48,Si1: 0,Mn1: 0.85,Cr1: 0.3,Mo1: 0,Ni1: 0.3,Cu1: 0.25,V1: 0, P1: 0)
             break
             
         default:
@@ -502,181 +502,181 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     
                 case 0:
                     self.clearFields()
-                    //mark2(0,Si1: 0,Mn1: 0,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0,P1: 0)
+                    //mark(0,Si1: 0,Mn1: 0,Cr1: 0,Mo1: 0,Ni1: 0,Cu1: 0,V1: 0,P1: 0)
                     
-                case 1: mark2(0.08, Si1: 0.6, Mn1: 1.7, Cr1: 0, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0)
+                case 1: mark(0.08, Si1: 0.6, Mn1: 1.7, Cr1: 0, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0)
                     
-                case 2: mark2(0.09, Si1: 0.6, Mn1: 1.4, Cr1: 0.6, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.03)
+                case 2: mark(0.09, Si1: 0.6, Mn1: 1.4, Cr1: 0.6, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.03)
                     
-                case 3: mark2(0.15, Si1: 1.0, Mn1: 2.3, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.03)
+                case 3: mark(0.15, Si1: 1.0, Mn1: 2.3, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.03)
                     
-                case 4: mark2(0.1, Si1: 0.3, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 4: mark(0.1, Si1: 0.3, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 5: mark2(0.12, Si1: 0.37, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 5: mark(0.12, Si1: 0.37, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 6: mark2(0.12, Si1: 0.37, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 6: mark(0.12, Si1: 0.37, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 7: mark2(0.12, Si1: 0.8, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 7: mark(0.12, Si1: 0.8, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 8: mark2(0.12, Si1: 0.8, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 8: mark(0.12, Si1: 0.8, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 9: mark2(0.13, Si1: 0.35, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.09, P1: 0.02)
+                case 9: mark(0.13, Si1: 0.35, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.09, P1: 0.02)
                     
-                case 10: mark2(0.11, Si1: 0.3, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 10: mark(0.11, Si1: 0.3, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 11: mark2(0.12, Si1: 0.37, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 11: mark(0.12, Si1: 0.37, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 12: mark2(0.12, Si1: 0.37, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 12: mark(0.12, Si1: 0.37, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 13: mark2(0.12, Si1: 1.1, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 13: mark(0.12, Si1: 1.1, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 14: mark2(0.12, Si1: 1.1, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 14: mark(0.12, Si1: 1.1, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 15: mark2(0.13, Si1: 0.5, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 15: mark(0.13, Si1: 0.5, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 16: mark2(0.13, Si1: 0.5, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.1, P1: 0.025)
+                case 16: mark(0.13, Si1: 0.5, Mn1: 1.8, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.1, P1: 0.025)
                     
-                case 17: mark2(0.12, Si1: 0.35, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.02)
+                case 17: mark(0.12, Si1: 0.35, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.02)
                     
-                case 18: mark2(0.12, Si1: 0.35, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.02)
+                case 18: mark(0.12, Si1: 0.35, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.02)
                     
-                case 19: mark2(0.14, Si1: 2.1, Mn1: 1.5, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 19: mark(0.14, Si1: 2.1, Mn1: 1.5, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 20: mark2(0.13, Si1: 0.65, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0, Cu1: 0.3, V1: 0, P1: 0.03)
+                case 20: mark(0.13, Si1: 0.65, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0, Cu1: 0.3, V1: 0, P1: 0.03)
                     
-                case 21: mark2(0.12, Si1: 0.37, Mn1: 0.6, Cr1: 2.5, Mo1: 1.1, Ni1: 0.5, Cu1: 0, V1: 0, P1: 0.03)
+                case 21: mark(0.12, Si1: 0.37, Mn1: 0.6, Cr1: 2.5, Mo1: 1.1, Ni1: 0.5, Cu1: 0, V1: 0, P1: 0.03)
                     
-                case 22: mark2(0.12, Si1: 1, Mn1: 0.9, Cr1: 0.7, Mo1: 0, Ni1: 1.6, Cu1: 0.6, V1: 0, P1: 0.035)
+                case 22: mark(0.12, Si1: 1, Mn1: 0.9, Cr1: 0.7, Mo1: 0, Ni1: 1.6, Cu1: 0.6, V1: 0, P1: 0.035)
                     
-                case 23: mark2(0.12, Si1: 0.37, Mn1: 0.6, Cr1: 0.8, Mo1: 0, Ni1: 0.6, Cu1: 0.5, V1: 0, P1: 0.12)
+                case 23: mark(0.12, Si1: 0.37, Mn1: 0.6, Cr1: 0.8, Mo1: 0, Ni1: 0.6, Cu1: 0.5, V1: 0, P1: 0.12)
                     
-                case 24: mark2(0.12, Si1: 1.1, Mn1: 0.8, Cr1: 0.9, Mo1: 0, Ni1: 0.8, Cu1: 0.6, V1: 0, P1: 0.035)
+                case 24: mark(0.12, Si1: 1.1, Mn1: 0.8, Cr1: 0.9, Mo1: 0, Ni1: 0.8, Cu1: 0.6, V1: 0, P1: 0.035)
                     
-                case 25: mark2(0.16, Si1: 0.37, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 25: mark(0.16, Si1: 0.37, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 26: mark2(0.15, Si1: 0.6, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 26: mark(0.15, Si1: 0.6, Mn1: 1.65, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 27: mark2(0.14, Si1: 0.5, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 27: mark(0.14, Si1: 0.5, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 28: mark2(0.15, Si1: 0.7, Mn1: 1.7, Cr1: 0.3, Mo1: 0.25, Ni1: 0.3, Cu1: 0.03, V1: 0.15, P1: 0.035)
+                case 28: mark(0.15, Si1: 0.7, Mn1: 1.7, Cr1: 0.3, Mo1: 0.25, Ni1: 0.3, Cu1: 0.03, V1: 0.15, P1: 0.035)
                     
-                case 29: mark2(0.16, Si1: 0.6, Mn1: 1.3, Cr1: 0.5, Mo1: 0.25, Ni1: 1.7, Cu1: 0.03, V1: 0.1, P1: 0.035)
+                case 29: mark(0.16, Si1: 0.6, Mn1: 1.3, Cr1: 0.5, Mo1: 0.25, Ni1: 1.7, Cu1: 0.03, V1: 0.1, P1: 0.035)
                     
-                case 30: mark2(0.15, Si1: 0.8, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 30: mark(0.15, Si1: 0.8, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 31: mark2(0.14, Si1: 0.5, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 31: mark(0.14, Si1: 0.5, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 32: mark2(0.14, Si1: 0.37, Mn1: 1, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.08, P1: 0.02)
+                case 32: mark(0.14, Si1: 0.37, Mn1: 1, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.08, P1: 0.02)
                     
-                case 33: mark2(0.12, Si1: 0.37, Mn1: 0.6, Cr1: 9, Mo1: 0, Ni1: 0.4, Cu1: 0.25, V1: 0, P1: 0.035)
+                case 33: mark(0.12, Si1: 0.37, Mn1: 0.6, Cr1: 9, Mo1: 0, Ni1: 0.4, Cu1: 0.25, V1: 0, P1: 0.035)
                     
-                case 34: mark2(0.16, Si1: 0.5, Mn1: 1.3, Cr1: 0.9, Mo1: 0.4, Ni1: 1.7, Cu1: 0, V1: 0.1, P1: 0.035)
+                case 34: mark(0.16, Si1: 0.5, Mn1: 1.3, Cr1: 0.9, Mo1: 0.4, Ni1: 1.7, Cu1: 0, V1: 0.1, P1: 0.035)
                     
-                case 35: mark2(0.15, Si1: 0.6, Mn1: 1.55, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 35: mark(0.15, Si1: 0.6, Mn1: 1.55, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 36: mark2(0.15, Si1: 0.6, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 36: mark(0.15, Si1: 0.6, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 37: mark2(0.18, Si1: 0.5, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.11, P1: 0.03)
+                case 37: mark(0.18, Si1: 0.5, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.11, P1: 0.03)
                     
-                case 38: mark2(0.15, Si1: 0.6, Mn1: 1.45, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 38: mark(0.15, Si1: 0.6, Mn1: 1.45, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 39: mark2(0.18, Si1: 0.37, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 39: mark(0.18, Si1: 0.37, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 40: mark2(0.18, Si1: 0.6, Mn1: 1.6, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.035)
+                case 40: mark(0.18, Si1: 0.6, Mn1: 1.6, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.035)
                     
-                case 41: mark2(0.18, Si1: 0.6, Mn1: 1.6, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.035)
+                case 41: mark(0.18, Si1: 0.6, Mn1: 1.6, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.035)
                     
-                case 42: mark2(0.16, Si1: 0.7, Mn1: 1.3, Cr1: 0.8, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 42: mark(0.16, Si1: 0.7, Mn1: 1.3, Cr1: 0.8, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 43: mark2(0.18, Si1: 0.17, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.15, P1: 0.035)
+                case 43: mark(0.18, Si1: 0.17, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.15, P1: 0.035)
                     
-                case 44: mark2(0.18, Si1: 0.17, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.15, P1: 0.035)
+                case 44: mark(0.18, Si1: 0.17, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.15, P1: 0.035)
                     
-                case 45: mark2(0.18, Si1: 0.7, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.1, P1: 0.035)
+                case 45: mark(0.18, Si1: 0.7, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.1, P1: 0.035)
                     
-                case 46: mark2(0.18, Si1: 0.7, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.1, P1: 0.035)
+                case 46: mark(0.18, Si1: 0.7, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.1, P1: 0.035)
                     
-                case 47: mark2(0.18, Si1: 1, Mn1: 1.3, Cr1: 0.3, Mo1: 0.15, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 47: mark(0.18, Si1: 1, Mn1: 1.3, Cr1: 0.3, Mo1: 0.15, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 48: mark2(0.18, Si1: 0.37, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.12, P1: 0.035)
+                case 48: mark(0.18, Si1: 0.37, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.4, V1: 0.12, P1: 0.035)
                     
-                case 49: mark2(0.18, Si1: 0.37, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.035)
+                case 49: mark(0.18, Si1: 0.37, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.12, P1: 0.035)
                     
-                case 50: mark2(0.18, Si1: 0.7, Mn1: 0.7, Cr1: 0.9, Mo1: 0, Ni1: 0.6, Cu1: 0.4, V1: 0, P1: 0.035)
+                case 50: mark(0.18, Si1: 0.7, Mn1: 0.7, Cr1: 0.9, Mo1: 0, Ni1: 0.6, Cu1: 0.4, V1: 0, P1: 0.035)
                     
-                case 51: mark2(0.2, Si1: 0.6, Mn1: 1.7, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.14, P1: 0.035)
+                case 51: mark(0.2, Si1: 0.6, Mn1: 1.7, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.14, P1: 0.035)
                     
-                case 52: mark2(0.2, Si1: 0.6, Mn1: 1.7, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.14, P1: 0.035)
+                case 52: mark(0.2, Si1: 0.6, Mn1: 1.7, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.14, P1: 0.035)
                     
-                case 53: mark2(0.2, Si1: 0.5, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0.12, P1: 0.025)
+                case 53: mark(0.2, Si1: 0.5, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0.12, P1: 0.025)
                     
-                case 54: mark2(0.19, Si1: 0.6, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.1, P1: 0.035)
+                case 54: mark(0.19, Si1: 0.6, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.1, P1: 0.035)
                     
-                case 55: mark2(0.18, Si1: 0.7, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 55: mark(0.18, Si1: 0.7, Mn1: 1.2, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 56: mark2(0.18, Si1: 0.7, Mn1: 1.2, Cr1: 0.3, Mo1: 0.15, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 56: mark(0.18, Si1: 0.7, Mn1: 1.2, Cr1: 0.3, Mo1: 0.15, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 57: mark2(0.18, Si1: 0.25, Mn1: 0.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.35, V1: 0, P1: 0.035)
+                case 57: mark(0.18, Si1: 0.25, Mn1: 0.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.35, V1: 0, P1: 0.035)
                     
-                case 58: mark2(0.2, Si1: 0.6, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 58: mark(0.2, Si1: 0.6, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 59: mark2(0.2, Si1: 0.6, Mn1: 1.55, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
+                case 59: mark(0.2, Si1: 0.6, Mn1: 1.55, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.025)
                     
-                case 60: mark2(0.2, Si1: 0.6, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 60: mark(0.2, Si1: 0.6, Mn1: 1.4, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 61: mark2(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 61: mark(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 62: mark2(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 62: mark(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 63: mark2(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 63: mark(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 64: mark2(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 64: mark(0.22, Si1: 0.17, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 65: mark2(0.23, Si1: 0.9, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 65: mark(0.23, Si1: 0.9, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 66: mark2(0.13, Si1: 0.37, Mn1: 0.6, Cr1: 2.5, Mo1: 1.1, Ni1: 0.5, Cu1: 0.3, V1: 0, P1: 0.035)
+                case 66: mark(0.13, Si1: 0.37, Mn1: 0.6, Cr1: 2.5, Mo1: 1.1, Ni1: 0.5, Cu1: 0.3, V1: 0, P1: 0.035)
                     
-                case 67: mark2(0.22, Si1: 1.5, Mn1: 1.5, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 67: mark(0.22, Si1: 1.5, Mn1: 1.5, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 68: mark2(0.22, Si1: 2.4, Mn1: 1.5, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 68: mark(0.22, Si1: 2.4, Mn1: 1.5, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 69: mark2(0.26, Si1: 1.55, Mn1: 1.8, Cr1: 1.8, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 69: mark(0.26, Si1: 1.55, Mn1: 1.8, Cr1: 1.8, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 70: mark2(0.26, Si1: 0.7, Mn1: 1.9, Cr1: 1.7, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 70: mark(0.26, Si1: 0.7, Mn1: 1.9, Cr1: 1.7, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 71: mark2(0.26, Si1: 0.7, Mn1: 1.9, Cr1: 1.2, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 71: mark(0.26, Si1: 0.7, Mn1: 1.9, Cr1: 1.2, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 72: mark2(0.22, Si1: 2.4, Mn1: 1.5, Cr1: 1.2, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 72: mark(0.22, Si1: 2.4, Mn1: 1.5, Cr1: 1.2, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 73: mark2(0.22, Si1: 0.3, Mn1: 1.4, Cr1: 0.4, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0)
+                case 73: mark(0.22, Si1: 0.3, Mn1: 1.4, Cr1: 0.4, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0)
                     
-                case 74: mark2(0.25, Si1: 1.2, Mn1: 0.9, Cr1: 0, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0.04)
+                case 74: mark(0.25, Si1: 1.2, Mn1: 0.9, Cr1: 0, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0.04)
                     
-                case 75: mark2(0.26, Si1: 0.7, Mn1: 1.7, Cr1: 2.1, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 75: mark(0.26, Si1: 0.7, Mn1: 1.7, Cr1: 2.1, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 76: mark2(0.26, Si1: 0.7, Mn1: 1.9, Cr1: 1.9, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 76: mark(0.26, Si1: 0.7, Mn1: 1.9, Cr1: 1.9, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 77: mark2(0.26, Si1: 0.7, Mn1: 1.7, Cr1: 1.7, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 77: mark(0.26, Si1: 0.7, Mn1: 1.7, Cr1: 1.7, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 78: mark2(0.26, Si1: 0.7, Mn1: 1.7, Cr1: 1.7, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 78: mark(0.26, Si1: 0.7, Mn1: 1.7, Cr1: 1.7, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 79: mark2(0.29, Si1: 0.9, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 79: mark(0.29, Si1: 0.9, Mn1: 1.6, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 80: mark2(0.26, Si1: 0.9, Mn1: 1.3, Cr1: 0.8, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 80: mark(0.26, Si1: 0.9, Mn1: 1.3, Cr1: 0.8, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 81: mark2(0.29, Si1: 1.7, Mn1: 0.9, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 81: mark(0.29, Si1: 1.7, Mn1: 0.9, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 82: mark2(0.3, Si1: 1.5, Mn1: 1.3, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 82: mark(0.3, Si1: 1.5, Mn1: 1.3, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 83: mark2(0.32, Si1: 1.2, Mn1: 0.9, Cr1: 0, Mo1: 0, Ni1: 0, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 83: mark(0.32, Si1: 1.2, Mn1: 0.9, Cr1: 0, Mo1: 0, Ni1: 0, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 84: mark2(0.32, Si1: 2.2, Mn1: 0.9, Cr1: 0.9, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0.04)
+                case 84: mark(0.32, Si1: 2.2, Mn1: 0.9, Cr1: 0.9, Mo1: 0, Ni1: 0, Cu1: 0, V1: 0, P1: 0.04)
                     
-                case 85: mark2(0.37, Si1: 0.17, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
+                case 85: mark(0.37, Si1: 0.17, Mn1: 1.75, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.045)
                     
-                case 86: mark2(0.37, Si1: 0.9, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
+                case 86: mark(0.37, Si1: 0.9, Mn1: 1.7, Cr1: 0.3, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0, P1: 0.04)
                     
-                case 87: mark2(0.2, Si1: 0.6, Mn1: 1.7, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.14, P1: 0.035)
+                case 87: mark(0.2, Si1: 0.6, Mn1: 1.7, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.14, P1: 0.035)
                     
                // case 88: mark2(0.2, Si1: 0.6, Mn1: 1.7, Cr1: 0.4, Mo1: 0, Ni1: 0.3, Cu1: 0.3, V1: 0.14, P1: 0.035)
                 default:
@@ -788,13 +788,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         var Temp : Double
         var Cekv : Double
         
-        var real = true
+        let real = true
         
         if alpha {
             
             if fields[0] {
                 
-                if !(P.text?.isEmpty)! || !(Si.text?.isEmpty)! {
+                /*if !(P.text?.isEmpty)! || !(Si.text?.isEmpty)! {
                     
                     let alert = UIAlertController(title: "Ошибка", message: "В данной формуле недопустимо применение сторонних хим. элементов! Очистить лишние ячейки?", preferredStyle: .alert)
                     
@@ -817,7 +817,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     
                     present(alert, animated: true, completion: nil)
                     
-                }
+                }*/
                 
                 Cekv = cekv(Double(C.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!)
                 
@@ -958,10 +958,9 @@ func temp (_ diam: Double, cek: Double) -> Double {
     
 }
 
-//func cekv_gost (_ C: Double, Si: Double, Mn: Double, Cr: Double, Mo: Double, Ni: Double, Cu: Double, V: Double, P: Double) -> Double {
+
 func cekv_gost (_ C: Double, Si: Double, Mn: Double, Cr: Double, Ni: Double, Cu: Double, V: Double, P: Double) -> Double {
-    
-    //return C+Si/24+Mn/6+Cr/5+Mo/4+Ni/40+Cu/13+V/14+P/2
+
     return C+Si/24+Mn/6+Cr/5+Ni/40+Cu/13+V/14+P/2
     
 }

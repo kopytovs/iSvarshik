@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-private let reuseIdentifier = "CellIdentifier"
+private let reuseIdentifier = "videoCell"
 
 class CollectionViewController: UICollectionViewController {
     
-    var names = ["Сварка нержавеющих сталей", "Сварка высокоуглеродистых сталей", "Сварка чугуна", "Сварка алюминия", "Ремонт и наплавка изношенных поверхностей. Защита от износа", "Наплавка против абразивного износа", "Техника безопастности при сварке", "Сварочные деформации", "Наплавка инструментальных"]
-    var videos = ["https://www.youtube.com/embed/2DvrTTEsynU", "https://www.youtube.com/embed/4iphDNrNA9U", "https://www.youtube.com/embed/VDjUXHAjOO8", "https://www.youtube.com/embed/RYUWM5bJAyY", "https://www.youtube.com/embed/LwSSdP0h25E", "https://www.youtube.com/embed/RBS3FkoSrSU", "https://www.youtube.com/embed/A2ChzS_U3uo", "https://www.youtube.com/embed/seX5IZG65HI", "https://www.youtube.com/embed/M98Z-wkkj1o"]
+    let videosRef = FIRDatabase.database().reference().child("Videos")
+    
+    var videos = Array<String>()
+    var names = Array<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,7 @@ class CollectionViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
+        self.loadInfo()
         
         self.collectionView?.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
         
@@ -55,7 +59,7 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 8
+        return names.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,17 +72,57 @@ class CollectionViewController: UICollectionViewController {
         
         cell.NameOfTheVideo.text = names[indexPath.row]
         
-        cell.VideoL.allowsInlineMediaPlayback = true
+        //cell.VideoL.allowsInlineMediaPlayback = true
         
         cell.VideoL.scrollView.isScrollEnabled = false
         
-        cell.VideoL.loadHTMLString("<iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        cell.VideoL.loadHTMLString("<body style=\"margin: 0; padding: 0;\"><iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe></body>",baseURL: nil)
+        
+        //cell.VideoL.loadHTMLString("<iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
         
         cell.NameOfTheVideo.textColor = UIColor.white
         
         cell.backgroundColor = .clear
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.center.x += self.view.bounds.height
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
+        
+            cell.center.x -= self.view.bounds.height
+        
+        }, completion: nil)
+    }
+    
+    private func loadInfo(){
+        
+        //var index = 83
+        
+        videosRef.queryOrdered(byChild: "source").observeSingleEvent(of: .value, with: {snap in
+            
+            if (snap.value is NSNull) {
+                print ("беда")
+                //self.isLoadInfo()
+            } else{
+                for child in snap.children{
+                    let data = child as! FIRDataSnapshot
+                    let value = data.value! as! [String:Any]
+                    let tmp_name: String = value["name"] as! String
+                    let tmp_src: String = value["source"] as! String
+                    self.names.append(tmp_name)
+                    self.videos.append(tmp_src)
+                    //self.videos[tmp_name] = tmp_src
+                }
+                //self.isLoadInfo()
+                self.collectionView?.reloadData()
+            }
+            
+        })
+        
+        
+        
     }
 
     // MARK: UICollectionViewDelegate
@@ -113,3 +157,5 @@ class CollectionViewController: UICollectionViewController {
     */
 
 }
+
+
