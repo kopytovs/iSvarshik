@@ -7,18 +7,15 @@
 //
 
 import UIKit
-//import Firebase
 import FirebaseDatabase
+import DZNEmptyDataSet
+import ChameleonFramework
 
-class Termin: UITableViewController, UISearchBarDelegate{
+class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
     
     @IBOutlet var table: UITableView!
     
     @IBOutlet weak var SBar: UISearchBar!
-    
-    //let mas = ["Автоматическая сварка", "Вводная планка", "Вылет электрода", "Газовая сварка", "Двусторонняя сварка", "Диффузионная сварка", "Дуговая сварка", "Индукционная сварка", "Контактная сварка", "Лазерная сварка", "Левый способ сварки", "Место возобновления шва", "Многопроходная сварка", "Наклон горелки", "Наплавка (сваркой)", "Неостающаяся подкладка", "Обратноступенчатая сварка", "Однопроходная сварка", "Односторонняя сварка", "Остающаяся подкладка", "Параметры сварки", "Погонная энергия El", "Подкладка", "Плотность эффективной энергии Ql", "Полностью механизированная сварка", "Правый способ сварки", "Прихватка", "Производительность наплавки", "Расстояние от мундштука до изделия", "Рельефная сварка", "Роботизированная сварка", "Ручная сварка", "Сварка взрывом", "Сварка давлением", "Сварка металлов", "Сварка плавлением", "Сварка прихватками", "Сварка с поперечным колебанием горелки", "Сварка трением", "Сварка трением с перемешиванием", "Сварка углом вперед", "Сварка углом назад", "Скорость сварки", "Соединение (сваркой)", "Стыковая сварка оплавлением", "Стыковая сварка сопротивлением", "Температура между проходами Тi", "Температура предварительного подогрева Тр", "Термитная сварка", "Точечная контактная сварка", "Угол между горелкой и изделием", "Холодная сварка", "Частично механизированная сварка", "Шовная сварка внахлестку", "Электрошлаковая сварка", "Эффективный КПД процесса нагрева"]
-    
-    //var dataBase = FIRDatabase.database().reference()
     
     let terminsRef = FIRDatabase.database().reference().child("Termins")
     
@@ -34,12 +31,10 @@ class Termin: UITableViewController, UISearchBarDelegate{
     
     var temp:String = ""
     
-    //var searchController: UISearchController!
+    let backr = #imageLiteral(resourceName: "backgr1")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.table.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
         SBar.keyboardAppearance = .dark
         
@@ -50,15 +45,17 @@ class Termin: UITableViewController, UISearchBarDelegate{
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+        
+        self.view.backgroundColor = UIColor(patternImage: backr)
         
         self.loadInfo()
         
+        self.navigationController?.hidesNavigationBarHairline = true
+        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
+        
     }
-    
-    //@IBAction func unwindToSecond(segue: UIStoryboardSegue){
-        //self.performSegue(withIdentifier: "fromTerminsToSecond", sender: self)
-    //}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -91,7 +88,9 @@ class Termin: UITableViewController, UISearchBarDelegate{
 
         cell.textLabel?.text = (SActive && !filtered.isEmpty) ? filtered[indexPath.row] as String : mas[indexPath.row] as String
         
-        cell.textLabel?.textColor = UIColor.white
+        let tmp = UIColor(patternImage: backr)
+        
+        cell.textLabel?.textColor = ContrastColorOf(tmp, returnFlat: true)
         
         cell.backgroundColor = .clear
 
@@ -107,7 +106,6 @@ class Termin: UITableViewController, UISearchBarDelegate{
                 destinationController.name = ((SActive) && !(filtered.isEmpty)) ? filtered[indexPath.row] : mas[indexPath.row]
                 destinationController.exp = (((SActive) && !(filtered.isEmpty)) ? exp_dict[filtered[indexPath.row]] : exp_dict[mas[indexPath.row]])!
         }
-        
     }
     
     
@@ -153,21 +151,15 @@ class Termin: UITableViewController, UISearchBarDelegate{
         self.tableView.reloadData()
     }
     
-    //override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        /*cell.center.x += self.view.bounds.height
-        
-        UIView.animate(withDuration: 0.7, delay: 0.1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: .curveLinear, animations: {
-        
-            cell.center.x -= self.view.bounds.height
-        
-        }, completion: nil)*/
-        
-    //}
-    
     private func loadInfo(){
         
         //var index = 83
+        
+        let roll = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        
+        roll.hidesWhenStopped = true
+        
+        roll.startAnimating()
         
         terminsRef.queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: {snap in
             
@@ -189,7 +181,7 @@ class Termin: UITableViewController, UISearchBarDelegate{
         
         })
         
-        
+        roll.stopAnimating()
         
     }
     
@@ -206,8 +198,26 @@ class Termin: UITableViewController, UISearchBarDelegate{
         }
     }
 
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Нет соединения"
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
     
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Соединение с серверами разорвано. Проверьте подключение к сети интернет и повторите попытку."
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
+        let str = "Попробовать снова"
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.callout), NSForegroundColorAttributeName: FlatOrange()]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        self.loadInfo()
+    }
     
 }
-
-

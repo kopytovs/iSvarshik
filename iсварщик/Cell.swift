@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class Cell: UIViewController {
     
@@ -26,7 +27,7 @@ class Cell: UIViewController {
     
     @IBOutlet weak var form: UIImageView!
     
-    @IBOutlet weak var formUNI: UIImageView!
+    //@IBOutlet weak var formUNI: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -36,88 +37,96 @@ class Cell: UIViewController {
     
     var choose = true
     
-    override func viewDidLayoutSubviews() {
-        /*let contentSize = self.explain.sizeThatFits(self.explain.bounds.size)
-        var frame = self.explain.frame
-        frame.size.height = contentSize.height
-        self.explain.frame = frame
-        let aspectRatioTextViewConstraint = NSLayoutConstraint(item: self.explain, attribute: .height, relatedBy: .equal, toItem: self.explain, attribute: .width, multiplier: explain.bounds.height/explain.bounds.width, constant: 1)
-        self.explain.addConstraint(aspectRatioTextViewConstraint)*/
-        
-        /*let fixedWidth = explain.frame.size.width
-        explain.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        let newSize = explain.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        var newFrame = explain.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        explain.frame = newFrame;*/
-        
-        
-        
-    }
+    let backr = UIColor(patternImage: #imageLiteral(resourceName: "backgr2"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Name.text = Termin.mas[Termin.choose]
         
-        //exp = exp1.sorted(by: { $0.0 < $1.0 })
+        self.view.backgroundColor = backr
         
-        //print ("блаблабла: \(exp.count)")
-        
-        //self.explain.isScrollEnabled = false
-        
-        //self.explain.sizeToFit()
-        
-        /*let fixedWidth = explain.frame.size.width
-        explain.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        let newSize = explain.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        var newFrame = explain.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        explain.frame = newFrame*/
-        
-        textViewDidChange(textView: explain)
-        
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr2"))
-        
-        self.contView.backgroundColor = .clear
+        //self.contView.backgroundColor = .clear
         
         text1.text = name! as String
         
         explain.text = exp! as String
         
-        formUNI.isHidden = true
+        contView.backgroundColor = UIColor.clear
         
-        /*UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+        //formUNI.isHidden = true
         
-            self.tabBarController?.tabBar.layer.zPosition = -1
-            
-        }, completion: nil)*/
+        text1.textColor = ContrastColorOf(backr, returnFlat: true)
+        explain.textColor = ContrastColorOf(backr, returnFlat: true)
         
+        text1.sizeToFit()
+        explain.sizeToFit()
+        explain.updateConstraints()
+        
+        //textViewDidChange(textView: explain)
+        
+        self.chooseImage()
+        
+        form.sizeToFit()
+        //form.updateConstraints()
+        
+        self.navigationController?.hidesNavigationBarHairline = true
+        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 5)!)
+    }
+    
+    func textViewDidChange(textView: UITextView){
+        let fixedWidth = textView.frame.size.width
+        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = textView.frame
+        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        textView.frame = newFrame
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func shareImage(_ sender: Any) {
+        
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
+    private func chooseImage(){
         switch name! {
             
         case "Погонная энергия El":
             
-            formUNI.image = #imageLiteral(resourceName: "pogon")
-            image = formUNI.image!
-            formUNI.isHidden = false
-            form.isHidden = true
+            form.image = #imageLiteral(resourceName: "pogon")
+            image = form.image!
+            form.contentMode = .scaleAspectFit
+            //formUNI.isHidden = false
+            //form.isHidden = true
             choose = false
             
             break
             
         case "Эффективный КПД процесса нагрева":
             
-            formUNI.image = #imageLiteral(resourceName: "otnosh")
-            image = formUNI.image!
-            formUNI.isHidden = false
-            form.isHidden = true
+            form.image = #imageLiteral(resourceName: "otnosh")
+            image = form.image!
+            form.contentMode = .scaleAspectFit
+            //formUNI.isHidden = false
+            //form.isHidden = true
             choose = false
             break
             
         case "Плотность эффективной энергии Ql" :
-            formUNI.image = #imageLiteral(resourceName: "plotnost")
-            image = formUNI.image!
-            formUNI.isHidden = false
-            form.isHidden = true
+            form.image = #imageLiteral(resourceName: "plotnost")
+            image = form.image!
+            form.contentMode = .scaleAspectFit
+            //formUNI.isHidden = false
+            //form.isHidden = true
             choose = false
             break
             
@@ -231,58 +240,7 @@ class Cell: UIViewController {
             break
             
         }
-        
-        //self.form.layer.zPosition -= (self.view.frame.height+)
-        
-        //self.scrollView.updateConstraintsIfNeeded()
-        
-        //scrollView.sizeToFit()
-        //contView.sizeToFit()
-        //scrollView.updateConstraints()
-        
-        //self.explain.isScrollEnabled = true
-        
-        
-        
-        //if choose {
-            //self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 600)
-            
-        //}
-        
-        //var frame: CGRect = scrollView.frame
-        //frame.size = scrollView.contentSize
-        //scrollView.frame = frame
-        
-        //exp = Array(exp1.keys).sorted(<)
-        
-        // Do any additional setup after loading the view.
     }
-    
-    func textViewDidChange(textView: UITextView){
-        let fixedWidth = textView.frame.size.width
-        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        var newFrame = textView.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        textView.frame = newFrame
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    @IBAction func shareImage(_ sender: Any) {
-        
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        
-        self.present(activityViewController, animated: true, completion: nil)
-        
-    }
-    
 
     /*
     // MARK: - Navigation

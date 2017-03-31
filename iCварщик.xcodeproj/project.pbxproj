@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93276FAD1E633E250074A962 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93276FAC1E633E250074A962 /* GoogleService-Info.plist */; };
+		932B59BB1E896D6D003DB6CE /* intenetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932B59BA1E896D6D003DB6CE /* intenetConnection.swift */; };
 		9352FB2C1DC2CFF000DC0B60 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */; };
 		939921551DAD3FDF0043B058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921541DAD3FDF0043B058 /* AppDelegate.swift */; };
 		939921571DAD3FDF0043B058 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921561DAD3FDF0043B058 /* FirstViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		839198A823EAD93B2AEA98BE /* Pods_i_______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_i_______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93276FAC1E633E250074A962 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		932B59BA1E896D6D003DB6CE /* intenetConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = intenetConnection.swift; sourceTree = "<group>"; };
 		9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		939921511DAD3FDF0043B058 /* iсварщик.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iсварщик.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		939921541DAD3FDF0043B058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				9399215A1DAD3FDF0043B058 /* Main.storyboard */,
 				9399215D1DAD3FDF0043B058 /* Assets.xcassets */,
 				9399215F1DAD3FDF0043B058 /* LaunchScreen.storyboard */,
+				932B59BA1E896D6D003DB6CE /* intenetConnection.swift */,
 				939921621DAD3FDF0043B058 /* Info.plist */,
 				93276FAC1E633E250074A962 /* GoogleService-Info.plist */,
 			);
@@ -242,6 +245,7 @@
 				93F92A031DD23369005F8809 /* CollectionViewController.swift in Sources */,
 				939921571DAD3FDF0043B058 /* FirstViewController.swift in Sources */,
 				93A988F11DC3588C00E9E203 /* Cell.swift in Sources */,
+				932B59BB1E896D6D003DB6CE /* intenetConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

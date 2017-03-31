@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageUI
+import ChameleonFramework
+import JSSAlertView
 
 class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
@@ -20,6 +22,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
+        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
         
     }
     
@@ -57,7 +60,7 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
             mail.setToRecipients(["info@se123.ru"])
             mail.setMessageBody("<p>Приветствую, Спецэлектрод-Сервис!</p>", isHTML: true)
             
-            mail.view.tintColor = UIColor.orange
+            mail.view.tintColor = FlatOrange()
             
             present(mail, animated: true)
         } else {
@@ -66,16 +69,17 @@ class ThirdViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     @IBAction func infoPush(_ sender: Any) {
-        let alert = UIAlertController(title: "Помощь", message: "Добро пожаловать в приложение iСварщик! Здесь вы можете рассчитать эквивалент углерода (С экв.), а также температуру предварительного подогрева для сварки сталей различных марок. Вы можете ввести значения содержания химических элементов состава стали или выбрать из перечня (перечень будет дополняться). Также приложение имеет глоссарий терминов, употребляемых в сварке (глоссарий постепенно будет дополняться новыми терминами), а также видеоуроки об особенностях технологии сварки различных материалов. За всеми вопросами обращаться в email, указанный ниже, либо звонить по телефону.", preferredStyle: .alert)
+        /*let alert = UIAlertController(title: "Помощь", message: "Добро пожаловать в приложение iСварщик! Здесь вы можете рассчитать эквивалент углерода (С экв.), а также температуру предварительного подогрева для сварки сталей различных марок. Вы можете ввести значения содержания химических элементов состава стали или выбрать из перечня (перечень будет дополняться). Также приложение имеет глоссарий терминов, употребляемых в сварке (глоссарий постепенно будет дополняться новыми терминами), а также видеоуроки об особенностях технологии сварки различных материалов. За всеми вопросами обращаться в email, указанный ниже, либо звонить по телефону.", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "Спасибо!", style: .default, handler: nil)
         
         alert.addAction(ok)
         
-        alert.view.tintColor = UIColor.orange
+        alert.view.tintColor = FlatOrange()
         
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)*/
         
+        JSSAlertView().show(self, title: "Помощь", text: "Добро пожаловать в приложение iСварщик! Здесь вы можете рассчитать эквивалент углерода (С экв.), а также температуру предварительного подогрева для сварки сталей различных марок. Вы можете ввести значения содержания химических элементов состава стали или выбрать из перечня (перечень будет дополняться). Также приложение имеет глоссарий терминов, употребляемых в сварке (глоссарий постепенно будет дополняться новыми терминами), а также видеоуроки об особенностях технологии сварки различных материалов. За всеми вопросами обращаться в email, указанный ниже, либо звонить по телефону.", buttonText: "Спасибо!", color: UIColor(red:0.91, green:0.56, blue:0.36, alpha:1.0).flatten())
         
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
@@ -52,6 +53,9 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     var alpha: Bool = true
     var isClear = true
     
+    //let backr = UIColor(averageColorFrom: #imageLiteral(resourceName: "backgr1"))
+    let backr = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -59,8 +63,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         //Si.isHidden = true
         //PL.isHidden = true
         //SiL.isHidden = true
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
-        cont.tintColor = UIColor.orange
+        self.view.backgroundColor = backr
+        cont.tintColor = FlatOrange()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         self.picker.dataSource = self
@@ -73,6 +77,24 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         self.sekve.clipsToBounds = true
         self.tempa.clipsToBounds = true
         self.helper.clipsToBounds = true
+        
+        C.textColor = ContrastColorOf(backr, returnFlat: true)
+        Si.textColor = ContrastColorOf(backr, returnFlat: true)
+        Mn.textColor = ContrastColorOf(backr, returnFlat: true)
+        Cr.textColor = ContrastColorOf(backr, returnFlat: true)
+        Mo.textColor = ContrastColorOf(backr, returnFlat: true)
+        Ni.textColor = ContrastColorOf(backr, returnFlat: true)
+        Cu.textColor = ContrastColorOf(backr, returnFlat: true)
+        V.textColor = ContrastColorOf(backr, returnFlat: true)
+        P.textColor = ContrastColorOf(backr, returnFlat: true)
+        diam.textColor = ContrastColorOf(backr, returnFlat: true)
+        sekve.textColor = ContrastColorOf(backr, returnFlat: true)
+        tempa.textColor = ContrastColorOf(backr, returnFlat: true)
+        helper.textColor = ContrastColorOf(backr, returnFlat: true)
+        SiL.textColor = ContrastColorOf(backr, returnFlat: true)
+        PL.textColor = ContrastColorOf(backr, returnFlat: true)
+        
+        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
         
         //let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
         //self.view.addGestureRecognizer(longPressRecognizer)
@@ -89,7 +111,12 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         //print ("итого: \(arr4.count)")
         
         //arr1 = ["alpha","beta","delta","gamma","koshka","sobaka"]
-    } 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        picker.reloadAllComponents()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -229,7 +256,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
         nameText.numberOfLines = 0
         
-        nameText.textColor = UIColor.white
+        nameText.textColor = ContrastColorOf(backr, returnFlat: true)
+        
+        
+        
+        //nameText.textColor = UIColor.white
         
         //nameText.tintColor = UIColor.orange
         
@@ -237,8 +268,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
         //nameText.layer.borderColor = UIColor.orange.cgColor
         
-        pickerView.subviews[1].backgroundColor = UIColor.orange
-        pickerView.subviews[2].backgroundColor = UIColor.orange
+        pickerView.subviews[1].backgroundColor = FlatOrange()
+        pickerView.subviews[2].backgroundColor = FlatOrange()
         
        // self.picker.reloadAllComponents()
         

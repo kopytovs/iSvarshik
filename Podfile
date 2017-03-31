@@ -9,5 +9,7 @@ target 'iсварщик' do
 pod 'Firebase’
 pod ‘Firebase/Core’
 pod ‘Firebase/Database’
-
+pod 'DZNEmptyDataSet'
+pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+pod 'JSSAlertView'
 end

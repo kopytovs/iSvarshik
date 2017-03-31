@@ -8,15 +8,19 @@
 
 import UIKit
 import FirebaseDatabase
+import DZNEmptyDataSet
+import ChameleonFramework
 
 private let reuseIdentifier = "videoCell"
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     let videosRef = FIRDatabase.database().reference().child("Videos")
     
     var videos = Array<String>()
     var names = Array<String>()
+    
+    let backr = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +32,17 @@ class CollectionViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
-        self.loadInfo()
+        self.collectionView?.emptyDataSetDelegate = self
+        self.collectionView?.emptyDataSetSource = self
         
-        self.collectionView?.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "backgr1"))
+        if Reachability.isConnectedToNetwork(){
+            self.loadInfo()
+        }
+        
+        self.collectionView?.backgroundColor = backr
+        
+        self.navigationController?.hidesNavigationBarHairline = true
+        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
         
     }
 
@@ -80,7 +92,7 @@ class CollectionViewController: UICollectionViewController {
         
         //cell.VideoL.loadHTMLString("<iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
         
-        cell.NameOfTheVideo.textColor = UIColor.white
+        cell.NameOfTheVideo.textColor = ContrastColorOf(backr, returnFlat: true)
         
         cell.backgroundColor = .clear
     
@@ -99,6 +111,10 @@ class CollectionViewController: UICollectionViewController {
     private func loadInfo(){
         
         //var index = 83
+        
+        let roll = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        roll.hidesWhenStopped = true
+        roll.startAnimating()
         
         videosRef.queryOrdered(byChild: "source").observeSingleEvent(of: .value, with: {snap in
             
@@ -121,8 +137,30 @@ class CollectionViewController: UICollectionViewController {
             
         })
         
+        roll.stopAnimating()
         
-        
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Нет соединения"
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Соединение с серверами разорвано. Проверьте подключение к сети интернет и повторите попытку."
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
+        let str = "Попробовать снова"
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.callout), NSForegroundColorAttributeName: FlatOrange()]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        self.loadInfo()
     }
 
     // MARK: UICollectionViewDelegate
@@ -157,5 +195,6 @@ class CollectionViewController: UICollectionViewController {
     */
 
 }
+
 
 
