@@ -42,8 +42,8 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
         
         temp = SBar.text!
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        //tableView.delegate = self
+        //tableView.dataSource = self
         
         self.tableView.emptyDataSetSource = self
         self.tableView.emptyDataSetDelegate = self
@@ -52,8 +52,9 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
         
         self.loadInfo()
         
-        self.navigationController?.hidesNavigationBarHairline = true
-        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
+        //self.navigationController?.hidesNavigationBarHairline = true
+        //self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
+        //UIApplication.shared.statusBarStyle = .lightContent
         
     }
 
@@ -165,7 +166,7 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
             
             if (snap.value is NSNull) {
                 print ("беда")
-                self.isLoadInfo()
+                //self.isLoadInfo()
             } else{
                 for child in snap.children{
                     let data = child as! FIRDataSnapshot
@@ -175,7 +176,9 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
                     self.mas.append(tmp_name)
                     self.exp_dict[tmp_name] = tmp_descr
                 }
-                self.isLoadInfo()
+                //self.isLoadInfo()
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                self.tableView.separatorColor = FlatOrange()
                 self.tableView.reloadData()
             }
         
@@ -185,7 +188,7 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
         
     }
     
-    private func isLoadInfo(){
+    /*private func isLoadInfo(){
         if self.mas.isEmpty{
             let alert = UIAlertController(title: "Ошибка", message: "Невозможно загрузить данные, отсутствует подключение к интернету. Пожалуйста проверьте свое подключение и повторите попытку.", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .destructive, handler: {action -> Void in
@@ -196,7 +199,7 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
             alert.addAction(ok)
             present(alert, animated: true, completion: nil)
         }
-    }
+    }*/
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let str = "Нет соединения"

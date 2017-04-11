@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = FlatOrange()
         UINavigationBar.appearance().tintColor = FlatOrange()
+        UIApplication.shared.statusBarStyle = .lightContent
         //UIPickerView.appearance().tintColor = UIColor.orange
         return true
     }

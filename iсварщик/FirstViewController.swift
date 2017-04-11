@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import JSSAlertView
 
 class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
@@ -78,7 +79,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         self.tempa.clipsToBounds = true
         self.helper.clipsToBounds = true
         
-        C.textColor = ContrastColorOf(backr, returnFlat: true)
+        /*C.textColor = ContrastColorOf(backr, returnFlat: true)
         Si.textColor = ContrastColorOf(backr, returnFlat: true)
         Mn.textColor = ContrastColorOf(backr, returnFlat: true)
         Cr.textColor = ContrastColorOf(backr, returnFlat: true)
@@ -92,7 +93,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         tempa.textColor = ContrastColorOf(backr, returnFlat: true)
         helper.textColor = ContrastColorOf(backr, returnFlat: true)
         SiL.textColor = ContrastColorOf(backr, returnFlat: true)
-        PL.textColor = ContrastColorOf(backr, returnFlat: true)
+        PL.textColor = ContrastColorOf(backr, returnFlat: true)*/
         
         self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
         
@@ -864,11 +865,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     //print ("Вот Нан или не Нан: |\(Temp)|")
                         
                     if Temp.isNaN {
-                            
-                            let alert4 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
+                        
+                            /*let alert4 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
                             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alert4.addAction(ok)
-                            present(alert4, animated: true, completion: nil)
+                            present(alert4, animated: true, completion: nil)*/
+                        
+                        JSSAlertView().show(self, title: "Ошибка", text: "Диаметр слишком мал!", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                             
                         } else{
                             
@@ -893,13 +896,15 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 if (Cu.text?.isEmpty)! {mas.append("Cu")}
                 if (V.text?.isEmpty)! {mas.append("V")}
                 
-                let alert1 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas)", preferredStyle: .alert)
+                /*let alert1 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas)", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert1.addAction(ok)
                 
-                present(alert1, animated: true, completion: nil)
+                present(alert1, animated: true, completion: nil)*/
+                
+                JSSAlertView().show(self, title: "Ошибка", text: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas)", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                 
             }
             
@@ -918,10 +923,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     
                     if Temp.isNaN {
                         
-                        let alert3 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
+                        /*let alert3 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
                         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                         alert3.addAction(ok)
-                        present(alert3, animated: true, completion: nil)
+                        present(alert3, animated: true, completion: nil)*/
+                        JSSAlertView().show(self, title: "Ошибка", text: "Диаметр слишком мал!", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                         
                     } else{
                     
@@ -949,13 +955,14 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 if (Si.text?.isEmpty)! {mas1.append("Si")}
                 if (P.text?.isEmpty)! {mas1.append("P")}
                 
-                let alert2 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas1)", preferredStyle: .alert)
+                /*let alert2 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas1)", preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert2.addAction(ok)
                 
-                present(alert2, animated: true, completion: nil)
+                present(alert2, animated: true, completion: nil)*/
+                JSSAlertView().show(self, title: "Ошибка", text: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas1)", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                 
             }
             

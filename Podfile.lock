@@ -23,6 +23,7 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - ImageScrollView (1.3)
   - JSSAlertView (3.0.4)
 
 DEPENDENCIES:
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - Firebase
   - Firebase/Core
   - Firebase/Database
+  - ImageScrollView
   - JSSAlertView
 
 EXTERNAL SOURCES:
@@ -51,8 +53,9 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  ImageScrollView: 2f2d7139fb5a7d0c0b021eb8b086d8c3dc54c233
   JSSAlertView: 7d8345c88e6fd8b515bc49f0fc8d8c69f6776b9c
 
-PODFILE CHECKSUM: 53792e0f1062fefe50a789f7e50f44a4ec70c19a
+PODFILE CHECKSUM: 76d51e0431b4d789b97c7e4e6b56f070916043cc
 
 COCOAPODS: 1.2.0

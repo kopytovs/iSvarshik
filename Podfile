@@ -12,4 +12,5 @@ pod ‘Firebase/Database’
 pod 'DZNEmptyDataSet'
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 pod 'JSSAlertView'
+pod 'ImageScrollView'
 end

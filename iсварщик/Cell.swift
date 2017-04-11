@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import ImageScrollView
 
 class Cell: UIViewController {
     
@@ -25,9 +26,13 @@ class Cell: UIViewController {
     
     @IBOutlet weak var explain: UITextView!
     
-    @IBOutlet weak var form: UIImageView!
+    @IBOutlet weak var imgView: ImageScrollView!
+    
+    //@IBOutlet weak var form: UIImageView!
     
     //@IBOutlet weak var formUNI: UIImageView!
+    
+    var form: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -64,8 +69,11 @@ class Cell: UIViewController {
         //textViewDidChange(textView: explain)
         
         self.chooseImage()
+        self.imgView.display(image: image)
+        self.imgView.maximumZoomScale = 4.0
+        self.imgView.zoomScale = 0.3
         
-        form.sizeToFit()
+        //form.sizeToFit()
         //form.updateConstraints()
         
         self.navigationController?.hidesNavigationBarHairline = true
@@ -87,7 +95,7 @@ class Cell: UIViewController {
     }
     
     
-    @IBAction func shareImage(_ sender: Any) {
+    /*@IBAction func shareImage(_ sender: Any) {
         
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
@@ -95,16 +103,15 @@ class Cell: UIViewController {
         
         self.present(activityViewController, animated: true, completion: nil)
         
-    }
+    }*/
     
     private func chooseImage(){
         switch name! {
             
         case "Погонная энергия El":
             
-            form.image = #imageLiteral(resourceName: "pogon")
-            image = form.image!
-            form.contentMode = .scaleAspectFit
+            image = #imageLiteral(resourceName: "pogon")
+            //form.contentMode = .scaleAspectFit
             //formUNI.isHidden = false
             //form.isHidden = true
             choose = false
@@ -113,130 +120,132 @@ class Cell: UIViewController {
             
         case "Эффективный КПД процесса нагрева":
             
-            form.image = #imageLiteral(resourceName: "otnosh")
-            image = form.image!
-            form.contentMode = .scaleAspectFit
+            image = #imageLiteral(resourceName: "otnosh")
+            
+            //form.contentMode = .scaleAspectFit
             //formUNI.isHidden = false
             //form.isHidden = true
             choose = false
             break
             
         case "Плотность эффективной энергии Ql" :
-            form.image = #imageLiteral(resourceName: "plotnost")
-            image = form.image!
-            form.contentMode = .scaleAspectFit
+            image = #imageLiteral(resourceName: "plotnost")
+            
+            //form.contentMode = .scaleAspectFit
             //formUNI.isHidden = false
             //form.isHidden = true
             choose = false
             break
             
         case "Сварка взрывом" :
-            form.image = #imageLiteral(resourceName: "i11")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i11")
+            
             break
             
         case "Точечная контактная сварка":
-            form.image = #imageLiteral(resourceName: "i20")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i20")
+            
             break
             
         case "Шовная сварка внахлестку":
-            form.image = #imageLiteral(resourceName: "i21")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i21")
+            
             break
             
         case "Рельефная сварка":
-            form.image = #imageLiteral(resourceName: "i25")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i25")
+            
             break
             
         case "Стыковая сварка сопротивлением":
-            form.image = #imageLiteral(resourceName: "i26")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i26")
+            
             break
             
         case "Стыковая сварка оплавлением":
-            form.image = #imageLiteral(resourceName: "i27")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i27")
+            
             break
             
         case "Индукционная сварка":
-            form.image = #imageLiteral(resourceName: "i29")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i29")
+            
             break
             
         case "Сварка трением с перемешиванием":
-            form.image = #imageLiteral(resourceName: "i34")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i34")
+            
             break
             
         case "Диффузионная сварка":
-            form.image = #imageLiteral(resourceName: "i31")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i31")
+            
             break
             
         case "Термитная сварка":
-            form.image = #imageLiteral(resourceName: "i35")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i35")
+            
             break
             
         case "Лазерная сварка":
-            form.image = #imageLiteral(resourceName: "i48")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i48")
+            
             break
             
         case "Электрошлаковая сварка":
-            form.image = #imageLiteral(resourceName: "i50")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i50")
+            
             break
             
         case "Левый способ сварки":
-            form.image = #imageLiteral(resourceName: "i52")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i52")
+            
             break
             
         case "Правый способ сварки":
-            form.image = #imageLiteral(resourceName: "i53")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i53")
+            
             break
             
         case "Обратноступенчатая сварка":
-            form.image = #imageLiteral(resourceName: "i54")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i54")
+            
             break
             
         case "Сварка углом вперед":
-            form.image = #imageLiteral(resourceName: "i55")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i55")
+            
             break
             
         case "Сварка углом назад":
-            form.image = #imageLiteral(resourceName: "i56")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i56")
+            
             break
             
         case "Сварка с поперечным колебанием горелки":
-            form.image = #imageLiteral(resourceName: "i57")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i57")
+            
             break
             
         case "Наклон горелки":
-            form.image = #imageLiteral(resourceName: "i59")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i59")
+            
             break
             
         case "Угол между горелкой и изделием":
-            form.image = #imageLiteral(resourceName: "i60")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i60")
+            
             break
             
         case "Расстояние от мундштука до изделия":
-            form.image = #imageLiteral(resourceName: "i61")
-            image = form.image!
+            image = #imageLiteral(resourceName: "i61")
+            
             break
             
         default :
-            form.isHidden = true
+            image = #imageLiteral(resourceName: "пусто")
+            
+            //form.isHidden = true
             break
             
         }
