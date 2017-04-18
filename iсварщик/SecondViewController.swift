@@ -22,7 +22,6 @@ class SecondViewController: UIViewController {
         
         self.VideoLessons.layer.cornerRadius = self.VideoLessons.frame.size.width / 28
         self.VideoLessons.clipsToBounds = true
-        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
         
     }
 

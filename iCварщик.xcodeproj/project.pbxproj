@@ -10,6 +10,7 @@
 		93276FAD1E633E250074A962 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93276FAC1E633E250074A962 /* GoogleService-Info.plist */; };
 		932B59BB1E896D6D003DB6CE /* intenetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932B59BA1E896D6D003DB6CE /* intenetConnection.swift */; };
 		9352FB2C1DC2CFF000DC0B60 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9352FB2B1DC2CFF000DC0B60 /* ThirdViewController.swift */; };
+		938EEBF81E9D25B900CAC4E0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 939921621DAD3FDF0043B058 /* Info.plist */; };
 		939921551DAD3FDF0043B058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921541DAD3FDF0043B058 /* AppDelegate.swift */; };
 		939921571DAD3FDF0043B058 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921561DAD3FDF0043B058 /* FirstViewController.swift */; };
 		939921591DAD3FDF0043B058 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939921581DAD3FDF0043B058 /* SecondViewController.swift */; };
@@ -150,6 +151,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = D6EK8XP63P;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -178,6 +184,7 @@
 				939921611DAD3FDF0043B058 /* LaunchScreen.storyboard in Resources */,
 				93276FAD1E633E250074A962 /* GoogleService-Info.plist in Resources */,
 				9399215E1DAD3FDF0043B058 /* Assets.xcassets in Resources */,
+				938EEBF81E9D25B900CAC4E0 /* Info.plist in Resources */,
 				9399215C1DAD3FDF0043B058 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,7 +377,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = D6EK8XP63P;
 				INFOPLIST_FILE = "iсварщик/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.iSvarshik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +395,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = D6EK8XP63P;
 				INFOPLIST_FILE = "iсварщик/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.iSvarshik;
 				PRODUCT_NAME = "$(TARGET_NAME)";

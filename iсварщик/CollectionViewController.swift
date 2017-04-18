@@ -42,7 +42,6 @@ class CollectionViewController: UICollectionViewController, DZNEmptyDataSetDeleg
         self.collectionView?.backgroundColor = backr
         
         self.navigationController?.hidesNavigationBarHairline = true
-        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
         
     }
 
@@ -78,19 +77,13 @@ class CollectionViewController: UICollectionViewController, DZNEmptyDataSetDeleg
         
        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         
-        //cell.backgroundColor = UIColor.blue
-        
         // Configure the cell
         
         cell.NameOfTheVideo.text = names[indexPath.row]
         
-        //cell.VideoL.allowsInlineMediaPlayback = true
-        
         cell.VideoL.scrollView.isScrollEnabled = false
         
         cell.VideoL.loadHTMLString("<body style=\"margin: 0; padding: 0;\"><iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe></body>",baseURL: nil)
-        
-        //cell.VideoL.loadHTMLString("<iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
         
         cell.NameOfTheVideo.textColor = ContrastColorOf(backr, returnFlat: true)
         
@@ -109,12 +102,6 @@ class CollectionViewController: UICollectionViewController, DZNEmptyDataSetDeleg
     }
     
     private func loadInfo(){
-        
-        //var index = 83
-        
-        let roll = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        roll.hidesWhenStopped = true
-        roll.startAnimating()
         
         videosRef.queryOrdered(byChild: "source").observeSingleEvent(of: .value, with: {snap in
             
@@ -136,9 +123,7 @@ class CollectionViewController: UICollectionViewController, DZNEmptyDataSetDeleg
             }
             
         })
-        
-        roll.stopAnimating()
-        
+
     }
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
@@ -162,7 +147,7 @@ class CollectionViewController: UICollectionViewController, DZNEmptyDataSetDeleg
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
         self.loadInfo()
     }
-
+    
     // MARK: UICollectionViewDelegate
 
     /*

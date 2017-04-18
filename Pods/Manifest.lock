@@ -30,7 +30,6 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - DZNEmptyDataSet
   - Firebase
-  - Firebase/Core
   - Firebase/Database
   - ImageScrollView
   - JSSAlertView
@@ -56,6 +55,6 @@ SPEC CHECKSUMS:
   ImageScrollView: 2f2d7139fb5a7d0c0b021eb8b086d8c3dc54c233
   JSSAlertView: 7d8345c88e6fd8b515bc49f0fc8d8c69f6776b9c
 
-PODFILE CHECKSUM: 76d51e0431b4d789b97c7e4e6b56f070916043cc
+PODFILE CHECKSUM: 0357198f85004a7d559c051c8d25cf77499ba020
 
 COCOAPODS: 1.2.0

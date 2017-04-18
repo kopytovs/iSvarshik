@@ -68,6 +68,8 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -82,7 +84,16 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
             return mas.count
         }
     }
+    
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.center.y += self.view.bounds.height
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
+            
+            cell.center.y -= self.view.bounds.height
+            
+        }, completion: nil)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TCell", for: indexPath) as UITableViewCell
@@ -106,6 +117,7 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
                 let destinationController = segue.destination as! Cell
                 destinationController.name = ((SActive) && !(filtered.isEmpty)) ? filtered[indexPath.row] : mas[indexPath.row]
                 destinationController.exp = (((SActive) && !(filtered.isEmpty)) ? exp_dict[filtered[indexPath.row]] : exp_dict[mas[indexPath.row]])!
+                self.tableView.cellForRow(at: indexPath)?.isSelected = false
         }
     }
     

@@ -60,10 +60,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //P.isHidden = true
-        //Si.isHidden = true
-        //PL.isHidden = true
-        //SiL.isHidden = true
         self.view.backgroundColor = backr
         cont.tintColor = FlatOrange()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
@@ -79,39 +75,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         self.tempa.clipsToBounds = true
         self.helper.clipsToBounds = true
         
-        /*C.textColor = ContrastColorOf(backr, returnFlat: true)
-        Si.textColor = ContrastColorOf(backr, returnFlat: true)
-        Mn.textColor = ContrastColorOf(backr, returnFlat: true)
-        Cr.textColor = ContrastColorOf(backr, returnFlat: true)
-        Mo.textColor = ContrastColorOf(backr, returnFlat: true)
-        Ni.textColor = ContrastColorOf(backr, returnFlat: true)
-        Cu.textColor = ContrastColorOf(backr, returnFlat: true)
-        V.textColor = ContrastColorOf(backr, returnFlat: true)
-        P.textColor = ContrastColorOf(backr, returnFlat: true)
-        diam.textColor = ContrastColorOf(backr, returnFlat: true)
-        sekve.textColor = ContrastColorOf(backr, returnFlat: true)
-        tempa.textColor = ContrastColorOf(backr, returnFlat: true)
-        helper.textColor = ContrastColorOf(backr, returnFlat: true)
-        SiL.textColor = ContrastColorOf(backr, returnFlat: true)
-        PL.textColor = ContrastColorOf(backr, returnFlat: true)*/
-        
-        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 1)!)
-        
-        //let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
-        //self.view.addGestureRecognizer(longPressRecognizer)
-        //longPressRecognizer.delegate = self
-        
-        /*if (UserDefaults.standard.value(forKey: "numberOfEn") != nil){
-            numberOfEn = UserDefaults.standard.value(forKey: "numberOfEn") as! Int
-        }
-        
-        numberOfEn += 1
-        
-        UserDefaults.standard.set(numberOfEn, forKey: "numberOfEn")*/
-        
-        //print ("итого: \(arr4.count)")
-        
-        //arr1 = ["alpha","beta","delta","gamma","koshka","sobaka"]
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -195,43 +158,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     }
     
     
-    // these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
-    // for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
-    // If you return back a different object, the old one will be released. the view will be centered in the row rect
-    /*func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        //return "\(arr1[row])"
-        if component == 0{
-            return names[row]
-        } else{
-            switch self.picker.selectedRow(inComponent: 0){
-            case 0:
-                return arr1[row]
-            case 1:
-                return arr4[row]
-            default:
-                return "Ошибка!"
-            }
-
-        }
-        
-    }*/
-    
-    /*func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {// attributed title is favored if both methods are implemented{
-        var attributedString: NSAttributedString!
-        
-        switch component {
-        case 0:
-            attributedString = NSAttributedString(string: arr1[row], attributes: [NSForegroundColorAttributeName : UIColor.white])
-        case 1:
-            attributedString = NSAttributedString(string: arr4[row], attributes: [NSForegroundColorAttributeName : UIColor.white])
-        default:
-            attributedString = nil
-        }
-        
-        return attributedString
-    }*/
-    
-    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         let nameText = UILabel()
@@ -259,16 +185,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
         nameText.textColor = ContrastColorOf(backr, returnFlat: true)
         
-        
-        
-        //nameText.textColor = UIColor.white
-        
-        //nameText.tintColor = UIColor.orange
-        
-        //nameText.layer.borderWidth = 1
-        
-        //nameText.layer.borderColor = UIColor.orange.cgColor
-        
         pickerView.subviews[1].backgroundColor = FlatOrange()
         pickerView.subviews[2].backgroundColor = FlatOrange()
         
@@ -290,7 +206,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
 
     }*/
     
-    func mark (_ C1: Double, Si1: Double, Mn1: Double, Cr1: Double, Mo1: Double, Ni1: Double, Cu1: Double, V1: Double, P1: Double){
+    private func mark (_ C1: Double, Si1: Double, Mn1: Double, Cr1: Double, Mo1: Double, Ni1: Double, Cu1: Double, V1: Double, P1: Double){
     //func mark2 (_ C1: Double, Si1: Double, Mn1: Double, Cr1: Double, Ni1: Double, Cu1: Double, V1: Double, P1: Double){
         
         C.text = String(C1)
@@ -305,7 +221,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
     }
     
-    func clearAll () {
+    private func clearAll () {
         C.text?.removeAll()
         Si.text?.removeAll()
         Mn.text?.removeAll()
@@ -737,20 +653,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         case 0:
             
             alpha = true
-            //P.isHidden = true
-            //Si.isHidden = true
-            //PL.isHidden = true
-            //SiL.isHidden = true
             break
         
-            
         case 1:
             
             alpha = false
-            //P.isHidden = false
-            //Si.isHidden = false
-            //PL.isHidden = false
-            //SiL.isHidden = false
             break
             
         default:
@@ -759,14 +666,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     }
     
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let destinationController = segue.destination as! ThirdViewController
-        
-        destinationController.num = numberOfEn
-
-
-    }*/
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -806,7 +705,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         } else{
             
             fields[1] = false
-            
         }
         
         if (diam.text?.isEmpty)! {
@@ -826,31 +724,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             
             if fields[0] {
                 
-                /*if !(P.text?.isEmpty)! || !(Si.text?.isEmpty)! {
-                    
-                    let alert = UIAlertController(title: "Ошибка", message: "В данной формуле недопустимо применение сторонних хим. элементов! Очистить лишние ячейки?", preferredStyle: .alert)
-                    
-                    let cancel = UIAlertAction(title: "Отменить", style: .default, handler: {(alert) -> Void in
-                        
-                        real = false
-                    
-                    })
-                    
-                    let ok = UIAlertAction(title: "OK", style: .default, handler: {(action) -> Void in
-                    
-                        self.P.text?.removeAll()
-                        self.Si.text?.removeAll()
-                    
-                    })
-                    
-                    alert.addAction(cancel)
-                    
-                    alert.addAction(ok)
-                    
-                    present(alert, animated: true, completion: nil)
-                    
-                }*/
-                
                 Cekv = cekv(Double(C.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!)
                 
                 if real {
@@ -861,15 +734,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 if fields[2] {
                     
                     Temp = temp(Double(diam.text!)!, cek: Cekv)
-                    
-                    //print ("Вот Нан или не Нан: |\(Temp)|")
                         
                     if Temp.isNaN {
-                        
-                            /*let alert4 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
-                            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            alert4.addAction(ok)
-                            present(alert4, animated: true, completion: nil)*/
                         
                         JSSAlertView().show(self, title: "Ошибка", text: "Диаметр слишком мал!", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                             
@@ -896,14 +762,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 if (Cu.text?.isEmpty)! {mas.append("Cu")}
                 if (V.text?.isEmpty)! {mas.append("V")}
                 
-                /*let alert1 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas)", preferredStyle: .alert)
-                
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-                
-                alert1.addAction(ok)
-                
-                present(alert1, animated: true, completion: nil)*/
-                
                 JSSAlertView().show(self, title: "Ошибка", text: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas)", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                 
             }
@@ -912,7 +770,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
             
             if fields[1] {
                 
-                //Cekv = cekv_gost(Double(C.text!)!, Si: Double(Si.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Mo: Double(Mo.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!, P: Double(P.text!)! )
                 Cekv = cekv_gost(Double(C.text!)!, Si: Double(Si.text!)!, Mn: Double(Mn.text!)!, Cr: Double(Cr.text!)!, Ni: Double(Ni.text!)!, Cu: Double(Cu.text!)!, V: Double(V.text!)!, P: Double(P.text!)! )
 
                 sekve.text = "\(Double(Cekv).roundTo(places: 3))"
@@ -922,11 +779,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     Temp = temp(Double(diam.text!)!, cek: Cekv)
                     
                     if Temp.isNaN {
-                        
-                        /*let alert3 = UIAlertController(title: "Ошибка", message: "Диаметр слишком мал!", preferredStyle: .alert)
-                        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alert3.addAction(ok)
-                        present(alert3, animated: true, completion: nil)*/
+    
                         JSSAlertView().show(self, title: "Ошибка", text: "Диаметр слишком мал!", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                         
                     } else{
@@ -955,13 +808,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 if (Si.text?.isEmpty)! {mas1.append("Si")}
                 if (P.text?.isEmpty)! {mas1.append("P")}
                 
-                /*let alert2 = UIAlertController(title: "Ошибка", message: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas1)", preferredStyle: .alert)
-                
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-                
-                alert2.addAction(ok)
-                
-                present(alert2, animated: true, completion: nil)*/
                 JSSAlertView().show(self, title: "Ошибка", text: "Обнаружены пустые ячейки! Пожалуйста, введите информацию в ячейки: \n\(mas1)", buttonText: "OK", color: UIColor(red:1.00, green:0.62, blue:0.36, alpha:1.0).flatten())
                 
             }
