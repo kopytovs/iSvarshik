@@ -9,21 +9,26 @@
 import UIKit
 import ChameleonFramework
 import JSSAlertView
+import JVFloatLabeledTextField
 
 class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
-    @IBOutlet weak var C: UITextField!
-    @IBOutlet weak var Si: UITextField!
-    @IBOutlet weak var Mn: UITextField!
-    @IBOutlet weak var Cr: UITextField!
-    @IBOutlet weak var Mo: UITextField!
-    @IBOutlet weak var Ni: UITextField!
-    @IBOutlet weak var Cu: UITextField!
-    @IBOutlet weak var V: UITextField!
-    @IBOutlet weak var P: UITextField!
-    @IBOutlet weak var diam: UITextField!
+    @IBOutlet weak var C: JVFloatLabeledTextField!
+    @IBOutlet weak var Si: JVFloatLabeledTextField!
+    @IBOutlet weak var Mn: JVFloatLabeledTextField!
+    @IBOutlet weak var Cr: JVFloatLabeledTextField!
+    @IBOutlet weak var Mo: JVFloatLabeledTextField!
+    @IBOutlet weak var Ni: JVFloatLabeledTextField!
+    @IBOutlet weak var Cu: JVFloatLabeledTextField!
+    @IBOutlet weak var V: JVFloatLabeledTextField!
+    @IBOutlet weak var P: JVFloatLabeledTextField!
+    @IBOutlet weak var diam: JVFloatLabeledTextField!
     
     //var numberOfEn = 0
+    
+    @IBOutlet weak var CekvLabel: UILabel!
+    @IBOutlet weak var TLabel: UILabel!
+    
     
     var fields = [ false, false, false ]
     
@@ -49,8 +54,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
     //@IBOutlet var tempa: UITextField!
     @IBOutlet weak var helper: UITextView!
     
-    @IBOutlet weak var SiL: UILabel!
-    @IBOutlet weak var PL: UILabel!
     var alpha: Bool = true
     var isClear = true
     
@@ -74,6 +77,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         self.sekve.clipsToBounds = true
         self.tempa.clipsToBounds = true
         self.helper.clipsToBounds = true
+        
+        self.configureTextFields()
+        
+        CekvLabel.textColor = FlatSandDark()
+        TLabel.textColor = FlatSand()
         
     }
     
@@ -639,6 +647,39 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
     }
     
+    private func configureTextFields(){
+        
+        C.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        Si.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        Mn.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        Cr.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        Mo.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        Ni.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        Cu.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        V.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        P.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        diam.textColor = ContrastColorOf(FlatWhite(), returnFlat: true)
+        C.tintColor = FlatOrange()
+        Si.tintColor = FlatOrange()
+        Mn.tintColor = FlatOrange()
+        Cr.tintColor = FlatOrange()
+        Mo.tintColor = FlatOrange()
+        Ni.tintColor = FlatOrange()
+        Cu.tintColor = FlatOrange()
+        V.tintColor = FlatOrange()
+        P.tintColor = FlatOrange()
+        diam.tintColor = FlatOrange()
+        C.backgroundColor = FlatWhite()
+        Si.backgroundColor = FlatWhite()
+        Mn.backgroundColor = FlatWhite()
+        Cr.backgroundColor = FlatWhite()
+        Mo.backgroundColor = FlatWhite()
+        Ni.backgroundColor = FlatWhite()
+        Cu.backgroundColor = FlatWhite()
+        V.backgroundColor = FlatWhite()
+        P.backgroundColor = FlatWhite()
+        diam.backgroundColor = FlatWhite()        
+    }
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
@@ -671,12 +712,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
         
         if string == "," {
             textField.text! += "."
-            return false
-        }
-        
-        let dotsCount = textField.text?.components(separatedBy: ".").count
-        if dotsCount! > 0 && string == "." {
-            textField.text!.remove(at: (textField.text?.endIndex)!)
             return false
         }
         
@@ -747,7 +782,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                     } else{
                     
                         helper.text = "Невозможно расчитать температуру без диаметра!"
-                    
+                        tempa.text = "0"
                     }
                 
             } else {
@@ -791,6 +826,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate, UIPickerViewDe
                 } else{
                     
                     helper.text = "Невозможно расчитать температуру без диаметра!"
+                    tempa.text = "0"
                     
                 }
                 

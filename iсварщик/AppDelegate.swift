@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import ChameleonFramework
+import RAMAnimatedTabBarController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

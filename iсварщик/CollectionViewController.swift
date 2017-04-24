@@ -83,7 +83,7 @@ class CollectionViewController: UICollectionViewController, DZNEmptyDataSetDeleg
         
         cell.VideoL.scrollView.isScrollEnabled = false
         
-        cell.VideoL.loadHTMLString("<body style=\"margin: 0; padding: 0;\"><iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe></body>",baseURL: nil)
+        cell.VideoL.loadHTMLString("<body style=\"margin: 0; padding: 0;\"><iframe width=\"\(cell.VideoL.frame.width)\" height=\"\(cell.VideoL.frame.height)\" src=\"\(videos[indexPath.row])?&playsinline=1\" frameborder=\"0\"></iframe></body>",baseURL: nil)
         
         cell.NameOfTheVideo.textColor = ContrastColorOf(backr, returnFlat: true)
         

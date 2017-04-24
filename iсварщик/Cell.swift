@@ -12,13 +12,7 @@ import ImageScrollView
 
 class Cell: UIViewController {
     
-    //var page:Int = -1
-    
-    //var name = [""]
-    
     var name: String?
-    
-    //var exp : [String : String] = ["": ""]
 
     var exp: String?
     
@@ -27,12 +21,6 @@ class Cell: UIViewController {
     @IBOutlet weak var explain: UITextView!
     
     @IBOutlet weak var imgView: ImageScrollView!
-    
-    //@IBOutlet weak var form: UIImageView!
-    
-    //@IBOutlet weak var formUNI: UIImageView!
-    
-    var form: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -49,15 +37,11 @@ class Cell: UIViewController {
         
         self.view.backgroundColor = backr
         
-        //self.contView.backgroundColor = .clear
-        
         text1.text = name! as String
         
         explain.text = exp! as String
         
         contView.backgroundColor = UIColor.clear
-        
-        //formUNI.isHidden = true
         
         text1.textColor = ContrastColorOf(backr, returnFlat: true)
         explain.textColor = ContrastColorOf(backr, returnFlat: true)
@@ -66,21 +50,15 @@ class Cell: UIViewController {
         explain.sizeToFit()
         explain.updateConstraints()
         
-        //textViewDidChange(textView: explain)
-        
         self.chooseImage()
         self.imgView.display(image: image)
         self.imgView.maximumZoomScale = 4.0
         self.imgView.zoomScale = 0.3
         
-        //form.sizeToFit()
-        //form.updateConstraints()
-        
         self.navigationController?.hidesNavigationBarHairline = true
-        self.setStatusBarStyle(UIStatusBarStyle(rawValue: 5)!)
     }
     
-    func textViewDidChange(textView: UITextView){
+    private func textViewDidChange(textView: UITextView){
         let fixedWidth = textView.frame.size.width
         textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
@@ -94,57 +72,32 @@ class Cell: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*@IBAction func shareImage(_ sender: Any) {
-        
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        
-        self.present(activityViewController, animated: true, completion: nil)
-        
-    }*/
-    
     private func chooseImage(){
         switch name! {
             
         case "Погонная энергия El":
             
             image = #imageLiteral(resourceName: "pogon")
-            //form.contentMode = .scaleAspectFit
-            //formUNI.isHidden = false
-            //form.isHidden = true
             choose = false
-            
             break
             
         case "Эффективный КПД процесса нагрева":
             
             image = #imageLiteral(resourceName: "otnosh")
-            
-            //form.contentMode = .scaleAspectFit
-            //formUNI.isHidden = false
-            //form.isHidden = true
             choose = false
             break
             
         case "Плотность эффективной энергии Ql" :
             image = #imageLiteral(resourceName: "plotnost")
-            
-            //form.contentMode = .scaleAspectFit
-            //formUNI.isHidden = false
-            //form.isHidden = true
             choose = false
             break
             
         case "Сварка взрывом" :
             image = #imageLiteral(resourceName: "i11")
-            
             break
             
         case "Точечная контактная сварка":
             image = #imageLiteral(resourceName: "i20")
-            
             break
             
         case "Шовная сварка внахлестку":
@@ -244,8 +197,6 @@ class Cell: UIViewController {
             
         default :
             image = #imageLiteral(resourceName: "пусто")
-            
-            //form.isHidden = true
             break
             
         }

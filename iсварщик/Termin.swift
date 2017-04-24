@@ -199,19 +199,6 @@ class Termin: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource,
         roll.stopAnimating()
         
     }
-    
-    /*private func isLoadInfo(){
-        if self.mas.isEmpty{
-            let alert = UIAlertController(title: "Ошибка", message: "Невозможно загрузить данные, отсутствует подключение к интернету. Пожалуйста проверьте свое подключение и повторите попытку.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .destructive, handler: {action -> Void in
-                
-                self.performSegue(withIdentifier: "fromTerminsToSecond", sender: self)
-                
-            })
-            alert.addAction(ok)
-            present(alert, animated: true, completion: nil)
-        }
-    }*/
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let str = "Нет соединения"

@@ -12,4 +12,7 @@ pod 'DZNEmptyDataSet'
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 pod 'JSSAlertView'
 pod 'ImageScrollView'
+pod 'JVFloatLabeledTextField'
+pod 'BetterSegmentedControl', '~> 0.7'
+pod 'RAMAnimatedTabBarController', "~> 2.0.13"
 end
